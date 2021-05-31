@@ -306,3 +306,13 @@ Jobs
 
 input[type="radio"] {
   display: none; }
+
+.fback_img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px; }
+
+.fback_card {
+  max-width: 250px !important;
+  min-width: 250px; }

@@ -10,7 +10,7 @@ import {
   SiMongodb,
   SiAdobephotoshop,
   SiFigma,
-  SiAdobepremiere
+  SiJquery
 
  } from 'react-icons/si';
 
@@ -131,8 +131,8 @@ export const skills = [
   },
   {
     id: 10,
-    name: 'Photoshop',
-    icon: <SiAdobephotoshop />,
+    name: 'jQuery',
+    icon: <SiJquery />,
   },
   {
     id: 11,
@@ -141,12 +141,10 @@ export const skills = [
   },
   {
     id: 12,
-    name: 'Premiere',
-    icon: <SiAdobepremiere />,
+    name: 'Photoshop',
+    icon: <SiAdobephotoshop />,
   },
 ];
-
-
 
 
 export const jobs = [
@@ -187,4 +185,55 @@ export const jobs = [
 		],
 		"company": "CUKER"
 	}
+];
+
+export const feedBacks = [
+  {
+    "id": "1",
+    "name": "Elmer Mendoza",
+    "date": "May 2, 2020",
+    "image": "./images/item-1.jpeg",
+    "numStar": "3",
+    "comment": "Lorem ipsum dolor, e quo architecto omnis, et necessitatibus doloremque incidunt facilis laudantium nam laboriosam deleniti placeat, mollitia voluptate non, inventore commodi optio quis saepe! Amet, illum perspiciatis qui aspernatur, odio cum facilis dignissimos laborum, magnam aliquid sit natus sunt?"
+  },
+  {
+    "id": "2",
+    "name": "Lovely Mendoza",
+    "date": "April 8, 2021",
+    "image": "./images/item-2.jpeg",
+    "numStar": "5",
+    "comment": "Lor est aliquid molestiae quo architecto omnis, et necessitatibus doloremque incidunt facilis laudantium nam laboriosam deleniti placeat, mollitia voluptate non, inventore commodi optio quis saepe! Amet, illum perspiciatis qui aspernatur, odio cum facilis dignissimos laborum, magnam aliquid sit natus sunt?"
+  },
+  {
+    "id": "3",
+    "name": "Elmer Mendoza",
+    "date": "May 2, 2020",
+    "image": "./images/item-1.jpeg",
+    "numStar": "3",
+    "comment": "Lorem ipsum ds doloremque incidunt facilis laudantium nam laboriosam deleniti placeat, mollitia voluptate non, inventore commodi optio quis saepe! Amet, illum perspiciatis qui aspernatur, odio cum facilis dignissimos laborum, magnam aliquid sit natus sunt?"
+  },
+  {
+    "id": "4",
+    "name": "Lovely Mendoza",
+    "date": "April 8, 2021",
+    "image": "./images/item-2.jpeg",
+    "numStar": "5",
+    "comment": "Lorem ipto omnis, et necessitatibus doloremque incidunt facilis laudantium nam laboriosam deleniti placeattate non, inventore commodi optio quis saepe! Amet, illum perspiciatis qui aspernatur, odio cum facilis dignissimos laborum, magnam aliquid sit natus sunt?"
+  },
+  {
+    "id": "5",
+    "name": "Elmer Mendoza",
+    "date": "May 2, 2020",
+    "image": "./images/item-1.jpeg",
+    "numStar": "3",
+    "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing"
+  },
+  {
+    "id": "6",
+    "name": "Lovely Mendoza",
+    "date": "April 8, 2021",
+    "image": "./images/item-2.jpeg",
+    "numStar": "5",
+    "comment": "Lorem quo architecto omnis, et necessitatibus doloremque incidunt facilis laudantium nam laboriosam deleniti placeat, mollitia voluptate non, inventore commodi optio quis saepe! Amet, illum perspiciatis qui aspernatur, odio cum facilis dignissimos laborum, magnam aliquid sit natus sunt?"
+  },
 ];

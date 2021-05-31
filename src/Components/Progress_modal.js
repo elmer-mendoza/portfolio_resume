@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Progress } from 'reactstrap';
-import Projects from './Projects'
+import Feedback from './Feedback';
+import Sort_header from "./Sort_header"
 
 const ProgressModal = (props) => {
   const {
@@ -21,9 +22,13 @@ const ProgressModal = (props) => {
         onClick={toggle}
         />
       <Modal isOpen={modal} toggle={toggle} className={className}>
-        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+        <ModalHeader toggle={toggle}>
+       
+          <Sort_header/>
+           
+        </ModalHeader>
         <ModalBody>
-            <Projects/>
+            <Feedback/>
         </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={toggle}>Do Something</Button>{' '}

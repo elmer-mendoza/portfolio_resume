@@ -6,6 +6,7 @@ import Jobs2 from './Components/Jobs2';
 import Reviews from './Components/Reviews'
 import Skills from './Components/Skills'
 
+
 import './App.css';
 
 
@@ -18,6 +19,7 @@ function App() {
       <Skills/>
       <Jobs2/>
       <Reviews/>
+      
       
     </>
   );
