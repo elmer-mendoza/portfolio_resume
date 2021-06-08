@@ -235,5 +235,5 @@ export const feedBacks = [
     "image": "./images/item-2.jpeg",
     "numStar": "5",
     "comment": "Lorem quo architecto omnis, et necessitatibus doloremque incidunt facilis laudantium nam laboriosam deleniti placeat, mollitia voluptate non, inventore commodi optio quis saepe! Amet, illum perspiciatis qui aspernatur, odio cum facilis dignissimos laborum, magnam aliquid sit natus sunt?"
-  },
+  }
 ];

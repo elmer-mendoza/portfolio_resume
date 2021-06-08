@@ -1,40 +1,37 @@
-import React, { useState } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Progress } from 'reactstrap';
+import React, { useState,useEffect } from 'react';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter,Form, FormGroup,Label,Input} from 'reactstrap';
 import Feedback from './Feedback';
+import {feedBacks} from "./data";
 import Sort_header from "./Sort_header"
 
 const ProgressModal = (props) => {
   const {
     buttonLabel,
-    className
+    className,
   } = props;
 
   const [modal, setModal] = useState(false);
-
   const toggle = () => setModal(!modal);
-
+  const [filterFeedbacks,setFilterFeedbacks] = useState(feedBacks);
+    
+  
+  const result = (e) =>{
+    const filteredFeedbacks = feedBacks.filter(feedback => feedback.numStar == e.target.value );
+    setFilterFeedbacks(filteredFeedbacks);
+  }
+  
+ 
   return (
     <div>
-       <Progress 
-        value="50" 
-        id="progressTooltip" 
-        style={{marginTop:"1.25rem"}}
-        onClick={toggle}
-        />
-      <Modal isOpen={modal} toggle={toggle} className={className}>
+      <button className="revModal" onClick={toggle}>see reviews</button>
+      <Modal isOpen={modal} toggle={toggle} className={'revModal'}>
         <ModalHeader toggle={toggle}>
-       
-          <Sort_header/>
-           
+           <Sort_header result={result}/>
         </ModalHeader>
         <ModalBody>
-            <Feedback/>
+            <Feedback  filterFeedbacks={filterFeedbacks}/>
         </ModalBody>
-        <ModalFooter>
-          <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-          <Button color="secondary" onClick={toggle}>Cancel</Button>
-        </ModalFooter>
-      </Modal>
+       </Modal>
     </div>
   );
 }

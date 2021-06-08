@@ -5,7 +5,9 @@ import Progress_modal from './Progress_modal'
 
 const Reviews = () => {
     const [tooltipOpen, setTooltipOpen] = useState(false);
-      const toggle = () => setTooltipOpen(!tooltipOpen);
+    const toggle = () => setTooltipOpen(!tooltipOpen);
+
+
     return (
         <Container  >
             <Row className="py-4 my-4">
@@ -16,21 +18,27 @@ const Reviews = () => {
             </Row>
             
             <Row className="mx-auto px-auto">
-                <Col className="py-5"  sm="12" md="6">
+                <Col className="py-5"  sm="12" md="6" id="progressTooltip"  >
+                                <Progress_modal/>
+                                <Tooltip placement="top" isOpen={tooltipOpen} target="progressTooltip" toggle={toggle}>
+                                    click to see review!
+                                </Tooltip>
                    {[...Array(5)].map((_,i) => {
                      const index = i+1;
                      return (
-                         <Col className=" ">
-
+                         <Col  >
                             <Row >
                             <div className="col-3 pl-5  my-auto">
                                 <span >{index}star</span>
                             </div>
                             <div className="col-6 mb-3">
-                                <Progress_modal/>
-                                <Tooltip placement="top" isOpen={tooltipOpen} target="progressTooltip" toggle={toggle}>
-                                    click to see review!
-                                </Tooltip>
+                                <Progress 
+                                id="progressTooltip"
+                                value="50" 
+                                style={{marginTop:"1.25rem"}}
+                                onClick={toggle}
+                                />
+                                 
                             </div>
                             <div className="col-3 my-auto">
                                 <span >{index}star</span>

@@ -1,24 +1,21 @@
-import React, { useState } from 'react';
-import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import React from 'react';
+import {Form, FormGroup,Label,Input } from 'reactstrap';
 
-const Sort_header = (props) => {
-  const [dropdownOpen, setOpen] = useState(false);
+const Sort_header = ({result}) => {
 
-  const toggle = () => setOpen(!dropdownOpen);
 
+ 
   return (
-    <ButtonDropdown isOpen={dropdownOpen} toggle={toggle}>
-      <DropdownToggle caret>
-        sort by
-      </DropdownToggle>
-      <DropdownMenu>
-        <DropdownItem header>Header</DropdownItem>
-        <DropdownItem disabled>Action</DropdownItem>
-        <DropdownItem>Another Action</DropdownItem>
-        <DropdownItem divider />
-        <DropdownItem>Another Action</DropdownItem>
-      </DropdownMenu>
-    </ButtonDropdown>
+    <Form>
+        <Label for="numStar">Select</Label>
+        <Input type="select" name="select" id="numStar" onChange={result}>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </Input>
+      </Form>
   );
 }
 
