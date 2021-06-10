@@ -1,21 +1,35 @@
 import React from 'react';
 import {Form, FormGroup,Label,Input } from 'reactstrap';
 
-const Sort_header = ({result}) => {
+const Sort_header = ({sortDate,numStar}) => {
 
 
  
   return (
-    <Form>
-        <Label for="numStar">Select</Label>
-        <Input type="select" name="select" id="numStar" onChange={result}>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-        </Input>
-      </Form>
+    <Form >
+        <Label className="ml-3" for="numStar">No of stars
+          <Input type="select" name="numStar" id="numStar" onChange={numStar} >
+           {/* {[...Array(5)].map((_,index)=>{
+             let i = index +=1;
+             return `<option>${i}</option>`
+           })};             */}
+           
+            <option>All</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+         </Input>
+        </Label>
+        <Label className="ml-3" for="sortDate">Date
+          <Input type="select" name="sortDate" id="sortDate" onChange={sortDate} >
+            <option disabled>Sort</option>
+            <option>Descending</option>
+            <option>Ascending</option>
+         </Input>
+        </Label>
+       </Form>
   );
 }
 

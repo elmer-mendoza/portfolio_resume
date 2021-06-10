@@ -198,42 +198,42 @@ export const feedBacks = [
   },
   {
     "id": "2",
-    "name": "Lovely Mendoza",
-    "date": "April 8, 2021",
+    "name": "Merck Mendoza",
+    "date": "November 8, 2021",
     "image": "./images/item-2.jpeg",
     "numStar": "5",
     "comment": "Lor est aliquid molestiae quo architecto omnis, et necessitatibus doloremque incidunt facilis laudantium nam laboriosam deleniti placeat, mollitia voluptate non, inventore commodi optio quis saepe! Amet, illum perspiciatis qui aspernatur, odio cum facilis dignissimos laborum, magnam aliquid sit natus sunt?"
   },
   {
     "id": "3",
-    "name": "Elmer Mendoza",
-    "date": "May 2, 2020",
+    "name": "Mia Mendoza",
+    "date": "October 2, 2020",
     "image": "./images/item-1.jpeg",
-    "numStar": "3",
+    "numStar": "1",
     "comment": "Lorem ipsum ds doloremque incidunt facilis laudantium nam laboriosam deleniti placeat, mollitia voluptate non, inventore commodi optio quis saepe! Amet, illum perspiciatis qui aspernatur, odio cum facilis dignissimos laborum, magnam aliquid sit natus sunt?"
   },
   {
     "id": "4",
-    "name": "Lovely Mendoza",
-    "date": "April 8, 2021",
+    "name": "Emy Mendoza",
+    "date": "January 8, 2021",
     "image": "./images/item-2.jpeg",
-    "numStar": "5",
+    "numStar": "4",
     "comment": "Lorem ipto omnis, et necessitatibus doloremque incidunt facilis laudantium nam laboriosam deleniti placeattate non, inventore commodi optio quis saepe! Amet, illum perspiciatis qui aspernatur, odio cum facilis dignissimos laborum, magnam aliquid sit natus sunt?"
   },
   {
     "id": "5",
-    "name": "Elmer Mendoza",
-    "date": "May 2, 2020",
+    "name": "Pogi Mendoza",
+    "date": "December 1, 2020",
     "image": "./images/item-1.jpeg",
     "numStar": "3",
     "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing"
   },
   {
     "id": "6",
-    "name": "Lovely Mendoza",
-    "date": "April 8, 2021",
+    "name": "Cute Mendoza",
+    "date": "July 8, 2021",
     "image": "./images/item-2.jpeg",
-    "numStar": "5",
+    "numStar": "2",
     "comment": "Lorem quo architecto omnis, et necessitatibus doloremque incidunt facilis laudantium nam laboriosam deleniti placeat, mollitia voluptate non, inventore commodi optio quis saepe! Amet, illum perspiciatis qui aspernatur, odio cum facilis dignissimos laborum, magnam aliquid sit natus sunt?"
   }
 ];
