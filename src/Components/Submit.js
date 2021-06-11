@@ -1,7 +1,7 @@
 import React,{useState} from 'react'; 
 import {Container,Row,Col, Button, Form, FormGroup, Input, FormText } from 'reactstrap';
-
 import {FaStar} from 'react-icons/fa'
+import axios from 'axios'
 
 
 const Submit = () => {
@@ -14,14 +14,18 @@ const Submit = () => {
     
      const formSubmit = (e) =>{
         e.preventDefault();
-         console.log({...formData,selectedFile});
+         const data = ({...formData,selectedFile});
+         console.log(data)
+        axios.post(`http://localhost:5001/api/items`,data)
+            .then(res=> {console.log(res)})
+            .catch(err=>console.log(err));
          e.target.reset()  
          setRating(null)
          
          }
  
 
-     const {textArea,name,rate,profilePic}= formData;
+     const {comment,name,numStar,selectFile}= formData;
 
      const changeHandler =(e) => {
         
@@ -49,7 +53,7 @@ const Submit = () => {
                                         <label key={ratingValue}>
                                             <input 
                                             type="radio" 
-                                            name="rate" onChange={changeHandler}
+                                            name="numStar" onChange={changeHandler}
                                             value={ratingValue}
                                             onClick={()=> setRating(ratingValue)} 
                                             
@@ -65,13 +69,13 @@ const Submit = () => {
                                     )}
                         </FormGroup>
                         <FormGroup>
-                            <Input type="textarea" name="textArea"  onChange={changeHandler} id="textArea" placeholder="Write your comment" required/>
+                            <Input type="text" name="comment"  onChange={changeHandler} id="textArea" placeholder="Write your comment" required/>
                         </FormGroup>
                         <FormGroup>
-                            <Input type="" name="name" id="name"  onChange={changeHandler} placeholder="Name" required/>
+                            <Input type="text" name="name" id="name"  onChange={changeHandler} placeholder="Name" required/>
                         </FormGroup>
                         <FormGroup>
-                            <Input type="file" name="profilePic"  id="profilePic" onChange={(e) =>setSelectedFile(e.target.files[0])} />
+                            <Input type="file" name="selectFile"  id="selectFile" onChange={(e) =>setSelectedFile(e.target.files[0])} />
          
                             <FormText color="muted">
                             Upload your profile picture
