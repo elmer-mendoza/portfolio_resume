@@ -19,13 +19,13 @@ const Submit = () => {
         axios.post(`http://localhost:5001/api/items`,data)
             .then(res=> {console.log(res)})
             .catch(err=>console.log(err));
+        alert(`Thank you for your reveiew ${formData.name}`)
          e.target.reset()  
          setRating(null)
          
+         
          }
  
-
-     const {comment,name,numStar,selectFile}= formData;
 
      const changeHandler =(e) => {
         

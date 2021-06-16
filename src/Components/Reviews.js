@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Container,Col,Row, Progress,Tooltip} from 'reactstrap';
 import Submit from './Submit'
-import Progress_modal from './Progress_modal'
+import ProgressModal from './ProgressModal'
 
 const Reviews = () => {
     const [tooltipOpen, setTooltipOpen] = useState(false);
@@ -19,14 +19,14 @@ const Reviews = () => {
             
             <Row className="mx-auto px-auto">
                 <Col className="py-5"  sm="12" md="6" id="progressTooltip"  >
-                                <Progress_modal/>
+                                <ProgressModal/>
                                 <Tooltip placement="top" isOpen={tooltipOpen} target="progressTooltip" toggle={toggle}>
                                     click to see review!
                                 </Tooltip>
                    {[...Array(5)].map((_,i) => {
                      const index = i+1;
                      return (
-                         <Col  >
+                         <Col key={index} >
                             <Row >
                             <div className="col-3 pl-5  my-auto">
                                 <span >{index}star</span>

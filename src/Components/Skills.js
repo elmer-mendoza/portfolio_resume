@@ -1,13 +1,7 @@
 import React from 'react';
-import {FaGithub} from 'react-icons/fa';
-import {MdLanguage} from 'react-icons/md'
-import {
-Card, CardImg, CardText, CardBody,
-CardTitle, CardSubtitle, Container,Row,Col
-} from 'reactstrap';
 import {skills} from './data';
 
-import { FaLinkedin } from 'react-icons/fa';
+
 
 const Skills = () => {
   return (
@@ -21,18 +15,13 @@ const Skills = () => {
                         </div>
                     </div>
                 <div  className="row justify-content-center">
-                    {skills.map(skill => {
-                        const {id,icon} = skill;
-                            return (
-                                
-                                     <>   
-                                    <div key={id} style={{maxWidth:"200px"},{fontSize:"100px"}} className=" text-center col  m-2">
-                                    {skill.icon}<p className="text-center" style={{fontSize:"20px"}} >{skill.name}</p>
-                                    </div>
-                                    
-                                    </>
-                                       
-             
+                    {skills.map((skill,index) => {
+
+                         return (
+                            <div key={index} style={{fontSize:"100px"}} className=" text-center col  m-2">
+                            {skill.icon}<p className="text-center" style={{fontSize:"20px"}} >{skill.name}</p>
+                            </div>
+ 
                      ) } ) }
             </div>
             

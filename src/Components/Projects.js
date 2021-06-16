@@ -30,9 +30,9 @@ const Projects = () => {
                                     <CardImg top  width="100%" height="150px"  src={img} alt="Card image cap" />
                                     
                                         <p className="row link">
-                                            <a href="#"><i><MdLanguage /></i></a>
-                                            <a href="#"><i><FaLinkedin /></i></a>
-                                            <a href="#"><i><FaGithub /></i></a>
+                                            <a href=""><i><MdLanguage /></i></a>
+                                            <a href=""><i><FaLinkedin /></i></a>
+                                            <a href=""><i><FaGithub /></i></a>
                                             
                                            
                                             

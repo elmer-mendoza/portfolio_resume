@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form, FormGroup,Label,Input } from 'reactstrap';
+import {Form,Label,Input } from 'reactstrap';
 
 const Sort_header = ({sortDate,numStar}) => {
 
