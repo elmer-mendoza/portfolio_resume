@@ -1,1 +1,1 @@
-export {fetchReview} from './reviews/reviewActions';
+export * from './reviews/reviewActions'

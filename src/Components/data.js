@@ -14,7 +14,7 @@ import {
 
  } from 'react-icons/si';
 
-const works = [
+const projects = [
   {
     id: 1,
     title: 'buttermilk pancakes',
@@ -64,7 +64,7 @@ const works = [
     desc: `Portland chicharrones ethical edison bulb, palo santo craft beer chia heirloom iPhone everyday`,
   }
 ];
-export default works;
+export default projects;
 
 export const social = [
   {
@@ -187,7 +187,7 @@ export const jobs = [
 	}
 ];
 
-export const feedBacks = [
+export const reviews = [
   {
     "id": "1",
     "name": "Elmer Mendoza",

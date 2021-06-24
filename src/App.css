@@ -137,12 +137,12 @@ p {
   position: relative; }
 
 .hero img::before {
-  content: "";
+  content: "image now";
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  top: 50;
+  left: 50;
+  bottom: 50;
+  right: 50;
   background: linear-gradient(180deg, rgba(255, 0, 0, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), white);
   z-index: 2;
   height: 100%;

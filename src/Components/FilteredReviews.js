@@ -4,27 +4,24 @@ import {FaStar} from 'react-icons/fa';
 
 
 
-const Feedback = ({filterFeedbacks}) => {
-
+const FilteredReviews = ({filteredReviews}) => {
     return (
-        
         <Container >
             <Row className="justify-content-center ">
-            
-                {filterFeedbacks.map((fb) => {
+                  {filteredReviews.map((review) => {
+                    const {image,name,date,comment,id,numStar} = review;
                     return (
-            
-                        <Col className="fback_card p-1 m-2 shadow" key={fb.id}>
+                          <Col className="fback_card p-1 m-2 shadow" key={id}>
                             <Row >
                                 <Col className="col-4">
-                                    <img src={fb.image} className="fback_img shadow m-1"  alt="" />
+                                    <img src={image} className="fback_img shadow m-1"  alt="" />
                                 </Col>
                                 <Col className="col-8">
                                     <Row>
-                                        {fb.name}
+                                        {name}
                                     </Row>
                                     <Row>
-                                        {fb.date} 
+                                        {date} 
                                     </Row>
                                 </Col>
                             </Row>
@@ -33,21 +30,20 @@ const Feedback = ({filterFeedbacks}) => {
                                 {[...Array(5)].map((_,index) => {
                                 let  i = index +=1;
                                 let color;
-                                (i<=fb.numStar) ? color = "yellow" : color = "grey"
+                                (i<=numStar) ? color = "yellow" : color = "grey"
                                 return  (
-                                    <FaStar key={i} style={{color:color}}/>
+                                    <FaStar key={i} style={{color}}/>
                                 )})}
                             </Row>
                             <Row className="m-0 text-justify p-2">
-                                    {fb.comment}
+                                    {comment}
                             </Row>
                         </Col>
-            )   
-            
-        })}
- 
-            </Row>
+                    )   
+                   })}
+             </Row>
         </Container>
-)}
+    )
+}
 
-export default Feedback;
+export default FilteredReviews;

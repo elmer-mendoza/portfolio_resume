@@ -9,18 +9,12 @@ const Hero = () => {
                     <div className="col-7  ">
                          <img src="./images/self.png"  alt="" /> 
                     </div>
- 
-                        <div className="col-5 text-center fluid">
-                            <h2>Web Designer/Developer</h2>
-                          </div>  
- 
+                    <div className="col-5 text-center fluid">
+                        <h2>Web Designer/Developer</h2>
+                    </div>  
                 </div>
-   
             </div>
         </div>      
-        
-  
-        
     )
 }
 
