@@ -22,51 +22,37 @@ const Submit = () => {
         alert(`Thank you for your reveiew ${formData.name}`)
          e.target.reset()  
          setRating(null)
-         
-         
-         }
- 
+     }
 
      const changeHandler =(e) => {
-        
          setFormData({...formData,
              [e.target.name]:e.target.value
          })
-       
-         
-        }
-     
-
-
-    
+     }
+ 
     return (
         <Container>
             <Row >
                 <Col className="col-9 mx-auto">
-                    
-                    <Form  id="myForm" onSubmit={formSubmit}>
+                     <Form  id="myForm" onSubmit={formSubmit}>
                         <FormGroup >
                                 {[...Array(5)].map((_,i)=> {
                                     const ratingValue = i + 1;
-                                    ;
-                                    return (
+                                     return (
                                         <label key={ratingValue}>
                                             <input 
-                                            type="radio" 
-                                            name="numStar" onChange={changeHandler}
-                                            value={ratingValue}
-                                            onClick={()=> setRating(ratingValue)} 
-                                            
-                                             required   />
+                                                type="radio" 
+                                                name="numStar" onChange={changeHandler}
+                                                value={ratingValue}
+                                                onClick={()=> setRating(ratingValue)} 
+                                                required  />
                                             <FaStar className="star" 
-                                            color={ratingValue <= (hover || rating) ? "#ffc107" : "rgb(128,128,128)"}
-                                            onMouseEnter={()=>setHover(ratingValue)}
-                                            onMouseLeave={()=>setHover(null)}
-                                            />
+                                                color={ratingValue <= (hover || rating) ? "#ffc107" : "rgb(128,128,128)"}
+                                                onMouseEnter={()=>setHover(ratingValue)}
+                                                onMouseLeave={()=>setHover(null)} />
                                         </label>
                                     )
-                                } 
-                                    )}
+                                })}
                         </FormGroup>
                         <FormGroup>
                             <Input type="text" name="comment"  onChange={changeHandler} id="textArea" placeholder="Write your comment" required/>
@@ -81,7 +67,6 @@ const Submit = () => {
                             Upload your profile picture
                             </FormText>
                         </FormGroup>
-                        
                         <Button className="my-1" >Submit</Button>
                     </Form>
                 </Col>

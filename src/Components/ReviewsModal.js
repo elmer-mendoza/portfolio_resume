@@ -1,57 +1,80 @@
 import React, { useState,useEffect } from 'react';
-import {Modal, ModalHeader, ModalBody} from 'reactstrap';
+import {Modal, ModalHeader, ModalBody,Form,Label,Input} from 'reactstrap';
 import FilteredReviews from './FilteredReviews';
-import {reviews} from "./data";
-import SortReviewsHeader from "./SortReviewsHeader";
 import {connect} from 'react-redux';
 import {fetchReviewDataRequest} from '../redux/reviews/reviewActions';
 import {FETCH_REVIEWDATA_REQUEST} from '../redux/reviews/reviewActionTypes'
 
 
-
-
+const SortReviewsHeader =({numStar,sortDate})=> {
+  const options = [...Array(5)].map((_,index)=>{
+              let i = index +=1
+              return (
+                <option>{i}</option>
+                )
+            });
+  return (
+      <Form >
+          <Label className="ml-3" for="numStar">No of stars
+            <Input type="select" name="numStar" id="numStar" onChange={numStar} >
+                <option>All</option> 
+                {options}           
+            </Input>
+          </Label>
+          <Label className="ml-3" for="sortDate">Date
+            <Input type="select" name="sortDate" id="sortDate" onChange={sortDate} >
+              <option disabled>Sort</option>
+              <option>Descending</option>
+              <option>Ascending</option>
+          </Input>
+          </Label>
+      </Form>
+);
+}
 const ReviewsModal = (props) => {
 
- useEffect(() => {
-  fetchReviewDataRequest()
- }, [])
-  
-  
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
-  const [filteredReviews,setFilteredReviews] = useState(reviews);
-   
+  const [filteredReviews,setFilteredReviews] = useState(props.reviews);
   
   const sortDate =(e)=> {
-    
+    console.log(e)
     if (e.target.value === "Ascending") {
       const sortedDate=filteredReviews.sort((a,b)=> a.date<b.date ? -1:1);
       return setFilteredReviews([...sortedDate]);
     }
-     if (e.target.value === "Descending") {
+    if (e.target.value === "Descending") {
       const sortedDate=filteredReviews.sort((a,b)=> a.date>b.date ? -1:1);
       return setFilteredReviews([...sortedDate]);
     }  
-   }
-
-  const numStar = (e) =>{
-    if (e.target.value === "All") {
-      setFilteredReviews(reviews)
+  }
+  
+  const numStar =  (e) => {
+     if (e.target.value === "All") {
+      setFilteredReviews(props.reviews)
     }
     else{
-      const filteredReviews = reviews.filter(review => review.numStar === e.target.value );
-      setFilteredReviews([...filteredReviews]);
+      let filterReviews = props.reviews.filter(review => review.numStar == e.target.value)
+      setFilteredReviews(filterReviews);
     }
   }
 
   
- 
+
+
+
+ const handleDisplayReview = ()=> {
+   toggle();
+   setFilteredReviews(props.reviews)
+ }
+
   return (
     <div>
-      <button className="revModal" onClick={toggle}>see reviews</button>
+      <button className="revModal btn btn-sm ml-3 my-auto" onClick={toggle,handleDisplayReview}>see reviews</button>
       <Modal isOpen={modal} toggle={toggle} className={'revModal'}>
-        <ModalHeader className="fixed-top bg-light" toggle={toggle}>
-           <SortReviewsHeader sortDate={sortDate} numStar={numStar} />
+        <ModalHeader className="fixed-top bg-light" toggle={toggle} >
+            {/* <SortReviewsHeader  /> */}
+            <SortReviewsHeader sortDate={sortDate} numStar={numStar} />
         </ModalHeader>
         <ModalBody className="mt-5 pt-5">
             <FilteredReviews  filteredReviews={filteredReviews}/>
@@ -69,10 +92,11 @@ const mapStateToProps =(state)=>{
 
 const mapDispatchToProps=(dispatch)=>{
   return{
-    fetchReviewDataRequest:()=>dispatch({type:"GOOD"})
+    fetchReviewDataRequest:(props)=>props.dispatch({type:"GOOD"})
   }
 }
 
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(ReviewsModal)
+export default ReviewsModal
+// export default connect(mapStateToProps,mapDispatchToProps)(ReviewsModal)

@@ -4,14 +4,28 @@ import {FaStar} from 'react-icons/fa';
 
 
 
-const FilteredReviews = ({filteredReviews}) => {
+const FilteredReviews = (props) => {
+    console.log(props.filteredReviews)
     return (
         <Container >
             <Row className="justify-content-center ">
-                  {filteredReviews.map((review) => {
+                  {props.filteredReviews.map((review) => {
                     const {image,name,date,comment,id,numStar} = review;
                     return (
                           <Col className="fback_card p-1 m-2 shadow" key={id}>
+                            <Row className="m-0 text-justify p-2">
+                                    {comment}
+                            </Row>
+                            <Row className="m-0  p-2">
+                                {[...Array(5)].map((_,index) => {
+                                let  i = index +=1;
+                                let color;
+                                (i<=numStar) ? color = "yellow" : color = "grey"
+                                return  (
+                                    <FaStar key={i} style={{color}}/>
+                                )})}
+                            </Row>
+                            <hr/>
                             <Row >
                                 <Col className="col-4">
                                     <img src={image} className="fback_img shadow m-1"  alt="" />
@@ -24,19 +38,6 @@ const FilteredReviews = ({filteredReviews}) => {
                                         {date} 
                                     </Row>
                                 </Col>
-                            </Row>
-                            <hr/>
-                            <Row className="m-0  p-2">
-                                {[...Array(5)].map((_,index) => {
-                                let  i = index +=1;
-                                let color;
-                                (i<=numStar) ? color = "yellow" : color = "grey"
-                                return  (
-                                    <FaStar key={i} style={{color}}/>
-                                )})}
-                            </Row>
-                            <Row className="m-0 text-justify p-2">
-                                    {comment}
                             </Row>
                         </Col>
                     )   

@@ -193,7 +193,7 @@ export const reviews = [
     "name": "Elmer Mendoza",
     "date": "May 2, 2020",
     "image": "./images/item-1.jpeg",
-    "numStar": "3",
+    "numStar": "4",
     "comment": "Lorem ipsum dolor, e quo architecto omnis, et necessitatibus doloremque incidunt facilis laudantium nam laboriosam deleniti placeat, mollitia voluptate non, inventore commodi optio quis saepe! Amet, illum perspiciatis qui aspernatur, odio cum facilis dignissimos laborum, magnam aliquid sit natus sunt?"
   },
   {
@@ -209,7 +209,7 @@ export const reviews = [
     "name": "Mia Mendoza",
     "date": "October 2, 2020",
     "image": "./images/item-1.jpeg",
-    "numStar": "1",
+    "numStar": "3",
     "comment": "Lorem ipsum ds doloremque incidunt facilis laudantium nam laboriosam deleniti placeat, mollitia voluptate non, inventore commodi optio quis saepe! Amet, illum perspiciatis qui aspernatur, odio cum facilis dignissimos laborum, magnam aliquid sit natus sunt?"
   },
   {
@@ -225,7 +225,7 @@ export const reviews = [
     "name": "Pogi Mendoza",
     "date": "December 1, 2020",
     "image": "./images/item-1.jpeg",
-    "numStar": "3",
+    "numStar": "4",
     "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing"
   },
   {
@@ -233,7 +233,7 @@ export const reviews = [
     "name": "Cute Mendoza",
     "date": "July 8, 2021",
     "image": "./images/item-2.jpeg",
-    "numStar": "2",
+    "numStar": "5",
     "comment": "Lorem quo architecto omnis, et necessitatibus doloremque incidunt facilis laudantium nam laboriosam deleniti placeat, mollitia voluptate non, inventore commodi optio quis saepe! Amet, illum perspiciatis qui aspernatur, odio cum facilis dignissimos laborum, magnam aliquid sit natus sunt?"
   }
 ];

@@ -304,6 +304,12 @@ Jobs
   margin-left: .75rem;
   transition: color 200ms; }
 
+.starRating {
+  color: gray;
+  font-size: 1.35rem;
+  margin-left: .35rem;
+  transition: color 200ms; }
+
 input[type="radio"] {
   display: none; }
 
