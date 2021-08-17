@@ -1,21 +1,23 @@
 import React,{useState} from 'react'; 
 import {Container,Row,Col, Button, Form, FormGroup, Input, FormText } from 'reactstrap';
 import {FaStar} from 'react-icons/fa'
-import axios from 'axios'
+import axios from 'axios';
+import FileBase64 from 'react-file-base64';
 
 
 const Submit = () => {
      const [rating,setRating] =useState(null)
      const [hover,setHover] =useState(null)
      const [formData, setFormData] = useState({})
-     const [selectedFile, setSelectedFile] = useState(null);
+     const [reviewerImage, setReviewerImage] = useState(null);
 
     
     
      const formSubmit = (e) =>{
         e.preventDefault();
-         const data = ({...formData,selectedFile});
+        const data = ({...formData,reviewerImage});
          console.log(data)
+         console.log(reviewerImage)
         axios.post(`http://localhost:5001/api/items`,data)
             .then(res=> {console.log(res)})
             .catch(err=>console.log(err));
@@ -61,8 +63,10 @@ const Submit = () => {
                             <Input type="text" name="name" id="name"  onChange={changeHandler} placeholder="Name" required/>
                         </FormGroup>
                         <FormGroup>
-                            <Input type="file" name="selectFile"  id="selectFile" onChange={(e) =>setSelectedFile(e.target.files[0])} />
-         
+                            <Input type="file" name="reviewerImage"  id="reviewerImage" onChange={(e) =>setReviewerImage(e.target.files[0])} />
+                               {/* <FileBase64
+                                    multiple={ false }
+                                    onDone={ ({base64}) => setSelectedFile({selectedFile:base64})} />  */}
                             <FormText color="muted">
                             Upload your profile picture
                             </FormText>
