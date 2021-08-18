@@ -10,7 +10,7 @@ const FilteredReviews = (props) => {
         <Container >
             <Row className="justify-content-center ">
                   {props.filteredReviews.map((review) => {
-                    const {selectedFile,name,date,comment,id,numStar} = review;
+                    const {reviewerImage,name,date,comment,id,numStar} = review;
                     return (
                           <Col className="fback_card p-1 m-2 shadow" key={id}>
                             <Row className="m-0 text-justify p-2">
@@ -28,7 +28,7 @@ const FilteredReviews = (props) => {
                             <hr/>
                             <Row >
                                 <Col className="col-4">
-                                    <img src={selectedFile} className="fback_img shadow m-1"  alt="" />
+                                    <img src={reviewerImage} className="fback_img shadow m-1"  alt="" />
                                 </Col>
                                 <Col className="col-8">
                                     <Row>
