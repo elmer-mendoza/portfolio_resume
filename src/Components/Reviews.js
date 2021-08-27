@@ -3,34 +3,48 @@ import {Container,Col,Row, Progress,Tooltip} from 'reactstrap';
 import {FaStar} from 'react-icons/fa'
 import SubmitReview from './SubmitReview'
 import ReviewsModal from './ReviewsModal'
+import {connect} from 'react-redux';
+import { fetchReviews } from '../redux/reviewActions';
 import axios from 'axios'
 // import {reviews} from "./data";
 
-const Reviews = () => {
 
-    const [reviews,setReviews] = useState([{}]);
+const mapStateToProps = state => {
+   return {
 
-    const fetchRevs = async()=> {
-        const response= await fetch('http://localhost:5001/api/items');
-        const reviews = await response.json();
-        return (
-            setReviews(reviews)
+       reviews : state.reviews
+   } 
  
-        )
-        
-     };
-    console.log(reviews)
-    // const [tooltipOpen, setTooltipOpen] = useState(false);
-    // const toggle = () => setTooltipOpen(!tooltipOpen);
-    useEffect(()=>{
-       fetchRevs();
-    },[]);
+}
 
-
-
+const mapDispatchToProps = {
     
+    fetchReviews
+}
 
-    const ratings = reviews.map(review => { return( review.numStar)})
+const Reviews = (props) => {
+    
+    //     const [reviews,setReviews] = useState([{}]);
+    
+    // const fetchRevs = async()=> {
+        //     const response= await fetch('http://localhost:5001/api/items');
+        //     const reviews = await response.json();
+        //     const sortedReviewsByDate=reviews.sort((a,b)=> a.date>b.date ? -1:1);
+        //     return (
+            //         setReviews(sortedReviewsByDate)
+            
+            //     )
+            
+            //  };
+    useEffect(()=>{
+     
+        props.fetchReviews();
+        
+    },[]);
+  
+    
+    
+    const ratings = props.reviews.map(review => { return( review.numStar)})
     const aveRating = ratings.reduce((a,b)=> (+a)+(+b))/(ratings.length);
     return (
         <Container  >
@@ -56,7 +70,8 @@ const Reviews = () => {
                                 </label>
                                 )
                             })} 
-                            <ReviewsModal reviews={reviews}/>
+                            <ReviewsModal reviews={props.reviews}  fetchReviews={props.fetchReviews}/>
+                            {/* <ReviewsModal reviews={reviews} setReviews={setReviews} fetchRevs={fetchRevs}/> */}
                     </Row> 
                    
                    {[...Array(5)].map((_,i) => {
@@ -88,4 +103,4 @@ const Reviews = () => {
     )
 }
 
-export default Reviews
+export default connect(mapStateToProps,mapDispatchToProps)(Reviews)

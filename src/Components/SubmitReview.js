@@ -1,43 +1,72 @@
-import React,{useState} from 'react'; 
+import React,{useState,useEffect} from 'react'; 
 import {Container,Row,Col, Button, Form, FormGroup, Input, FormText } from 'reactstrap';
 import {FaStar} from 'react-icons/fa'
 import axios from 'axios';
-import { FilePond, registerPlugin } from 'react-filepond';
+import Resizer from "react-image-file-resizer";
 import FileBase64 from 'react-file-base64';
+import { fetchReviews } from '../redux/reviewActions';
+import {connect} from 'react-redux';
+
+
 
 
 
 const Submit = () => {
-     const [rating,setRating] =useState(null)
-     const [hover,setHover] =useState(null)
-     const [formData, setFormData] = useState({})
-    //  const [reviewerImage, setReviewerImage] = useState({});
-
+    const [rating,setRating] =useState(null)
+    const [hover,setHover] =useState(null)
+    const [formData, setFormData] = useState({})
+    const [newImage, setNewImage] = useState();
+    
+   
     
     
-     const formSubmit = (e) =>{
+    const formSubmit = (e) =>{
         e.preventDefault();
         const data = ({...formData});
-        // const data = ({...formData,reviewerImage
-        // });
-        
-        console.log(data)
-        
-        // data.append('reviewerImage',reviewerImage,reviewerImage.name)
-         
         axios.post(`http://localhost:5001/api/items`,data)
-            .then(res=> {console.log(res)})
-            .catch(err=>console.log(err));
+        .then(res=> {console.log(res)})
+        .catch(err=>console.log(err));
         alert(`Thank you for your review ${formData.name}`)
-         e.target.reset()  
-         setRating(null)
-     }
+        e.target.reset()  
+        setRating(null);
+        }
 
-     const changeHandler =(e) => {
-         setFormData({...formData,
-             [e.target.name]:e.target.value
-         })
+    
+    const changeHandler =(e) => {
+        setFormData({...formData,
+            [e.target.name]:e.target.value
+        })
+        console.log(formData)
+    }
+    
+    const fileChangedHandler=(e)=> {
+    let fileInput = false;
+    if (e.target.files[0]) {
+     fileInput = true;
+    }
+    if (fileInput) {
+     try {
+       Resizer.imageFileResizer(
+         e.target.files[0],
+         300,
+         300,
+         "JPEG",
+         100,
+         0,
+         (uri) => {
+           console.log(uri);
+        //    setNewImage({ newImage: uri });
+         setFormData({...formData,reviewerImage:uri})  
+         },
+         "base64",
+         200,
+         200
+       );
+     } catch (err) {
+       console.log(err);
      }
+    }
+    }
  
     return (
         <Container>
@@ -69,21 +98,10 @@ const Submit = () => {
                         <FormGroup>
                             <Input type="text" name="name" id="name"  onChange={changeHandler} placeholder="Name" required/>
                         </FormGroup>
-                            {/* <FilePond
-                                files={reviewerImage}
-                                onupdatefiles={setReviewerImage}
-                                allowMultiple={false}
-                                maxFiles={3}
-                                server="http://localhost:5001/api/items"
-                                name="reviewerImage"
-                                labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
-                            /> */}
-                        <FormGroup>
-                            {/* <Input type="file" name="reviewerImage"  id="reviewerImage" className="filepond" onChange={(e) =>setReviewerImage(e.target.files[0])} />  */}
-                               <FileBase64 type = "file"
-                                    multiple={ false }
-                                onDone={ ({base64}) => setFormData({...formData,reviewerImage:base64})} /> 
-                             <FormText color="muted">
+                         <FormGroup>
+                            <Input type="file" name="reviewerImage"  id="reviewerImage"  onChange={fileChangedHandler} /> 
+                              <FormText color="muted">
+                                <img src={newImage} alt="" /> 
                                 Upload your profile picture
                             </FormText>
                                 <Button className="my-1" >Submit</Button>

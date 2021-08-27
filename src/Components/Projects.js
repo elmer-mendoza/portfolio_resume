@@ -9,6 +9,35 @@ import projects from './data';
 import { FaLinkedin } from 'react-icons/fa';
 
 
+const Project=({projects}) => {
+    return (
+    projects.map(project => {
+        const {id,title,img,desc} = project;
+        return (
+            <div key={id}  className=" m-4 ">
+            {/* <div key={id} style={{maxWidth:"200px"}} className="col  m-5"> */}
+                <Card >
+                    <div className="row card-img">
+                        <CardImg top  width="100%" height="150px"  src={img} alt="Card image cap" />
+                        <p className="row link">
+                            <a href=""><i><MdLanguage /></i></a>
+                            <a href=""><i><FaLinkedin /></i></a>
+                            <a href=""><i><FaGithub /></i></a>
+                        </p>
+                    </div>  
+                    <CardBody>
+                        <CardTitle tag="h5">{title}</CardTitle>
+                        <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle>
+                        <CardText>{desc.substring(0,50)}</CardText>
+                    </CardBody>
+                </Card>
+            </div>
+        )
+    }))
+}
+
+
+
 const Projects = () => {
   return (
         <div className="container">
@@ -19,28 +48,7 @@ const Projects = () => {
                     </div>
                 </div>
                 <div  className="row justify-content-center">
-                    {projects.map(project => {
-                        const {id,title,img,desc} = project;
-                        return (
-                            <div key={id} style={{maxWidth:"200px"}} className="col  m-5">
-                                <Card >
-                                    <div className="row card-img">
-                                        <CardImg top  width="100%" height="150px"  src={img} alt="Card image cap" />
-                                        <p className="row link">
-                                            <a href=""><i><MdLanguage /></i></a>
-                                            <a href=""><i><FaLinkedin /></i></a>
-                                            <a href=""><i><FaGithub /></i></a>
-                                        </p>
-                                    </div>  
-                                    <CardBody>
-                                        <CardTitle tag="h5">{title}</CardTitle>
-                                        <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle>
-                                        <CardText>{desc.substring(0,50)}</CardText>
-                                    </CardBody>
-                                </Card>
-                            </div>
-                        )
-                    })}
+                    <Project projects={projects}/>
                 </div>
        </div> 
     

@@ -1,8 +1,9 @@
-import {createStore} from 'redux';
-import reviewReducer from './reviews/reviewReducers'
+import {createStore,applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
+import reviewReducer from './reviewReducers'
 
-const store =createStore(reviewReducer);
 
+const store =createStore(reviewReducer,applyMiddleware(thunk));
 
 
 export default store;
