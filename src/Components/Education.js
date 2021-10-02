@@ -1,9 +1,12 @@
 import React,{useState} from 'react';
 import  { Container,Row,Col,Modal, ModalBody} from 'reactstrap';
-import reactCert from "./backgroundImage/React-Course-Certificate.jpg"
-import reactNativeCert from "./backgroundImage/React-Native-Course-Certificate.jpg"
-import reactFrontEndCert from "./backgroundImage/Front-End-Web-and-Mobile-Development-Certificate.jpg"
-import pythonCert from "./backgroundImage/CertificateOfCompletion_Learning-Python.png"
+import reactCert from "./backgroundImage/reactCert.jpg"
+import reactNativeCert from "./backgroundImage/reactNativeCert.jpg"
+import frontEndCert from "./backgroundImage/frontEndCert.jpg"
+import pythonCert from "./backgroundImage/pythonCert.png"
+import backEndCert from "./backgroundImage/backEndCert.jpg"
+import fullStackCert from "./backgroundImage/fullStackCert.jpg"
+
 import Loading from "./Loading";
 
 function Education({education,loading}) {
@@ -38,7 +41,9 @@ function Education({education,loading}) {
           <div>
             <Modal isOpen={modal} toggle={toggle} >
                  <ModalBody className="mt-5 certificate " style={{paddingTop: 50}}toggle={toggle} >
-                    <img src={reactFrontEndCert}  alt="" img/>
+                    <img src={fullStackCert}  alt="" img/>
+                    <img src={frontEndCert}  alt="" img/>
+                    <img src={backEndCert}  alt="" img/>
                     <img src={reactCert}  alt="" img/>
                     <img src={reactNativeCert}  alt="" img/>
                     <img src={pythonCert}  alt="" img/>
