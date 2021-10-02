@@ -1,17 +1,17 @@
 import React,{useState} from 'react';
-import  { Container,Row,Col,Modal, ModalHeader, ModalBody} from 'reactstrap';
-import {education} from './data';
+import  { Container,Row,Col,Modal, ModalBody} from 'reactstrap';
 import reactCert from "./backgroundImage/React-Course-Certificate.jpg"
 import reactNativeCert from "./backgroundImage/React-Native-Course-Certificate.jpg"
 import reactFrontEndCert from "./backgroundImage/Front-End-Web-and-Mobile-Development-Certificate.jpg"
 import pythonCert from "./backgroundImage/CertificateOfCompletion_Learning-Python.png"
+import Loading from "./Loading";
 
- 
-function Education() {
-
+function Education({education,loading}) {
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
-    
+    if(loading){
+    return <Loading/>
+    } 
     return (
       <Container id='education'>
           <Row>
@@ -22,10 +22,10 @@ function Education() {
               </div>
               
               <div >
-                  {education.map(educ =>{
+                  {education.map((educ,index) =>{
                       const {school,accomplishment,year} = educ;
                       return (
-                        <article className="job-info">
+                        <article key={index} className="job-info">
                             <h3>{accomplishment}</h3>
                              <h6> {school}<span>   {year}</span></h6>
                                <div/>

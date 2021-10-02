@@ -2,8 +2,6 @@ import React from 'react';
 import {Container,Row,Col} from 'reactstrap';
 import {FaStar} from 'react-icons/fa';
 
-
-
 const FilteredReviews = (props) => {
       return (
         <Container >
@@ -48,5 +46,4 @@ const FilteredReviews = (props) => {
         </Container>
     )
 }
-
 export default FilteredReviews;

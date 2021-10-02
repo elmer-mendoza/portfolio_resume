@@ -1,6 +1,5 @@
 import  React from 'react';
 import {FaGithub} from 'react-icons/fa';
-import {MdLanguage} from 'react-icons/md'
 import { FaLinkedin } from 'react-icons/fa';
 import image from "./backgroundImage/self.png"
 

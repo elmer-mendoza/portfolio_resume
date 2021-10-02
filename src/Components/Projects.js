@@ -1,11 +1,11 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import {FaGithub} from 'react-icons/fa';
 import {MdLanguage} from 'react-icons/md'
 import {
 Card, CardImg, CardText, CardBody,
 CardTitle, CardSubtitle
 } from 'reactstrap';
-// import projects from './data';
+
 import { FaLinkedin } from 'react-icons/fa';
 import Loading from "./Loading";
 
@@ -41,16 +41,10 @@ const  Project=({project}) => {
         )
     }
 
-
-
-
-const Projects = ({projects,isLoading}) => {
-  
-    // console.log(projects)
-if(isLoading){
-   return <Loading/>
-}
-
+const Projects = ({projects,loading}) => {
+    if(loading){
+    return <Loading/>
+    }
   return (
         <div  id="projects" className="container" >
             <div className=" title row pt-5 text-center">
@@ -70,6 +64,5 @@ if(isLoading){
     
   );  
 };
-
 
 export default Projects;

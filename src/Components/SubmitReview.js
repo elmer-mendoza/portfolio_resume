@@ -3,12 +3,6 @@ import {Container,Row,Col, Button, Form, FormGroup, Input, FormText } from 'reac
 import {FaStar} from 'react-icons/fa'
 import axios from 'axios';
 import Resizer from "react-image-file-resizer";
-import FileBase64 from 'react-file-base64';
-import { fetchReviews } from '../redux/ActionsCreator';
-import {connect} from 'react-redux';
-
-
-
 
 
 const Submit = () => {
@@ -16,9 +10,6 @@ const Submit = () => {
     const [hover,setHover] =useState(null)
     const [formData, setFormData] = useState({})
     const [newImage, setNewImage] = useState();
-    
-   
-    
     
     const formSubmit = (e) =>{
         e.preventDefault();
@@ -30,8 +21,7 @@ const Submit = () => {
         e.target.reset()  
         setRating(null);
         }
-
-    
+        
     const changeHandler =(e) => {
         setFormData({...formData,
             [e.target.name]:e.target.value

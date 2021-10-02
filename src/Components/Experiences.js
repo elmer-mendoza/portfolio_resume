@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import  { Container,Row,Col } from 'reactstrap';
 import { FaAngleDoubleRight } from 'react-icons/fa';
-import {jobs} from './data';
+import Loading from "./Loading";
 
 
 const JobInfo =(props) =>{
@@ -24,8 +24,11 @@ const JobInfo =(props) =>{
 }
 
 
-function Experiences() {
+function Experiences({jobs,loading}) {
     const [value, setValue] = useState(0)
+     if(loading){
+    return <Loading/>
+    } 
     return (
       <Container id='experience' >
           <Row>

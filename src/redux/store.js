@@ -3,9 +3,6 @@ import thunk from 'redux-thunk';
 import reviewReducer from './Reducers/reviewReducers';
 import dataReducer from './Reducers/dataReducers';
 
-
-
-
 const ConfigureStore = () => {
     const store = createStore(
         combineReducers({
@@ -14,7 +11,6 @@ const ConfigureStore = () => {
          }),
         applyMiddleware(thunk)
     );
-
     return store;
 };
 

@@ -24,16 +24,19 @@ function App(props) {
    useEffect(() => {
          props.fetchData();
  },[]);
-  console.log(props.data.data[0].projects)
+  
+  const data =props.data.data[0]
+  const loading = props.data.isLoading
+
   return (
     <>
         <Nav/>
         <Hero />
-        <Projects projects={props.data.data[0].projects} isLoading={props.data.isLoading}/>
-         <Skills />
-        <Experiences />
-        <Education />
-        <Reviews/>
+        <Projects projects={data.projects} loading={loading}/>
+        <Skills loading={loading}/>
+        <Experiences jobs={data.jobs} loading={loading}/>
+        <Education education={data.education} loading={loading}/>
+        <Reviews loading={loading} />
     </>
     
     );

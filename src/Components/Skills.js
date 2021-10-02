@@ -1,9 +1,11 @@
 import React from 'react';
-import {skills} from './data';
+import Loading from "./Loading";
+import {skills} from './data'
 
-
-
-const Skills = () => {
+const Skills = ({loading}) => {
+    if(loading){
+    return <Loading/>
+    } 
   return (
         <div id='skills' className="container">
             <div className=" title row pt-5 text-center">
@@ -14,7 +16,7 @@ const Skills = () => {
             </div>
             <div  className="row justify-content-center">
                 {skills.map((skill,index) => {
-                        return (
+                         return (
                             <div key={index} style={{fontSize:"100px"}} className=" text-center col  m-2 ">
                             {skill.icon}<p className="text-center" style={{fontSize:"20px"}} >{skill.name}</p>
                             </div>

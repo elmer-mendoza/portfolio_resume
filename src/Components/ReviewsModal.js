@@ -1,10 +1,6 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import {Modal, ModalHeader, ModalBody,Form,Label,Input} from 'reactstrap';
 import FilteredReviews from './FilteredReviews';
-import {connect} from 'react-redux';
-import {fetchReviewDataRequest} from '../redux/ActionsCreator';
-import {FETCH_REVIEWDATA_REQUEST} from '../redux/ActionTypes'
-
 
 const SortReviewsHeader =({numStar,sortDate})=> {
   const options = [...Array(5)].map((_,index)=>{
@@ -31,6 +27,7 @@ const SortReviewsHeader =({numStar,sortDate})=> {
       </Form>
 );
 }
+
 const ReviewsModal = (props) => {
 
   const [modal, setModal] = useState(false);
@@ -59,7 +56,6 @@ const ReviewsModal = (props) => {
     }
   }
 
-
  const handleDisplayReview = ()=> {
    props.fetchReviews()
    toggle();
@@ -81,7 +77,5 @@ const ReviewsModal = (props) => {
     </div>
   );
 }
-
-
 
 export default ReviewsModal

@@ -1,14 +1,11 @@
-import React, {useState,useEffect} from 'react';
-import {Container,Col,Row, Progress,Tooltip} from 'reactstrap';
+import React, {useEffect} from 'react';
+import {Container,Col,Row, Progress} from 'reactstrap';
 import {FaStar} from 'react-icons/fa'
 import SubmitReview from './SubmitReview'
 import ReviewsModal from './ReviewsModal'
 import {connect} from 'react-redux';
 import { fetchReviews } from '../redux/ActionsCreator';
-import axios from 'axios'
-// import {reviews} from "./data";
-
-
+import Loading from "./Loading";
 
 const mapStateToProps = state => {
    return {
@@ -18,17 +15,18 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
      fetchReviews
-     
 }
 
 const Reviews = (props) => {
- console.log(props)
-    useEffect(()=>{
+     useEffect(()=>{
         props.fetchReviews();
     },[]);
   
     const ratings = props.reviews.map(review => { return( review.numStar)})
     const aveRating = ratings.reduce((a,b)=> (+a)+(+b))/(ratings.length);
+ 
+    if(props.loading){ return <Loading/> } 
+
     return (
         <Container id='reviews' >
             <Row className="py-4 my-4">
