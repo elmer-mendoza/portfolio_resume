@@ -27,12 +27,14 @@ const JobInfo =(props) =>{
 function Experiences() {
     const [value, setValue] = useState(0)
     return (
-      <Container >
+      <Container id='experience' >
           <Row>
             <Col  >
-              <div className="title my-5">
+              <div className="title pt-5 my-5">
                 <h2>experience</h2>
                 <div className="underline"></div>
+                <p><a href="https://docs.google.com/document/d/1ch25tWjfQP7AQUkVdJ63_50BwpGKqZH_0T79Gkp0nvk/edit?usp=sharing
+                ">Download Resume Here</a></p>
               </div>
               <div className="jobs-center">
                   {/* btn container */}

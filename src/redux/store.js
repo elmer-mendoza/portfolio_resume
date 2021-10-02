@@ -1,9 +1,21 @@
-import {createStore,applyMiddleware} from 'redux';
+import {createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import reviewReducer from './reviewReducers'
+import reviewReducer from './Reducers/reviewReducers';
+import dataReducer from './Reducers/dataReducers';
 
 
-const store =createStore(reviewReducer,applyMiddleware(thunk));
 
 
-export default store;
+const ConfigureStore = () => {
+    const store = createStore(
+        combineReducers({
+            reviews: reviewReducer,
+            data: dataReducer,
+         }),
+        applyMiddleware(thunk)
+    );
+
+    return store;
+};
+
+export default ConfigureStore

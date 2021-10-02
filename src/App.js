@@ -1,26 +1,19 @@
 import React from 'react';
-import Nav from './Components/Nav';
-import Hero from './Components/Hero';
-import Projects from './Components/Projects';
-import Experiences from './Components/Experiences';
-import Reviews from './Components/Reviews';
-import Skills from './Components/Skills';
+import Main from './Components/MainComponent';
 import {Provider} from 'react-redux';
-import store from './redux/store'
+import ConfigureStore  from './redux/store';
 import './App.css';
 
+
 function App() {
+  
+  const store = ConfigureStore();
   return (
     <Provider store={store}>
-        <Nav/>
-        <Hero/>
-        <Projects/>
-        <Skills/>
-        <Experiences/>
-        <Reviews/>
+        <Main/>
     </Provider>
     
-  );
-}
-
-export default App;
+    );
+  }
+  
+  export default App;

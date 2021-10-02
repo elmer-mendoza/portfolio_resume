@@ -4,7 +4,7 @@ import {FaStar} from 'react-icons/fa'
 import axios from 'axios';
 import Resizer from "react-image-file-resizer";
 import FileBase64 from 'react-file-base64';
-import { fetchReviews } from '../redux/reviewActions';
+import { fetchReviews } from '../redux/ActionsCreator';
 import {connect} from 'react-redux';
 
 
@@ -23,7 +23,7 @@ const Submit = () => {
     const formSubmit = (e) =>{
         e.preventDefault();
         const data = ({...formData});
-        axios.post(`http://localhost:5001/api/items`,data)
+        axios.post(`http://localhost:5001/api/reviews`,data)
         .then(res=> {console.log(res)})
         .catch(err=>console.log(err));
         alert(`Thank you for your review ${formData.name}`)
@@ -69,7 +69,7 @@ const Submit = () => {
     }
  
     return (
-        <Container>
+        <Container className="submitReview">
             <Row >
                 <Col className="col-9 mx-auto">
                      <Form  id="myForm" onSubmit={formSubmit} method='post' encType='multipart/form-data'>
@@ -93,7 +93,7 @@ const Submit = () => {
                                 })}
                         </FormGroup>
                         <FormGroup>
-                            <Input type="text" name="comment"  onChange={changeHandler} id="textArea" placeholder="Write your comment" required/>
+                            <Input type="textarea" name="comment"  onChange={changeHandler} id="textArea" placeholder="Write your comment" required/>
                         </FormGroup>
                         <FormGroup>
                             <Input type="text" name="name" id="name"  onChange={changeHandler} placeholder="Name" required/>

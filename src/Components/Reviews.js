@@ -4,63 +4,42 @@ import {FaStar} from 'react-icons/fa'
 import SubmitReview from './SubmitReview'
 import ReviewsModal from './ReviewsModal'
 import {connect} from 'react-redux';
-import { fetchReviews } from '../redux/reviewActions';
+import { fetchReviews } from '../redux/ActionsCreator';
 import axios from 'axios'
 // import {reviews} from "./data";
 
 
+
 const mapStateToProps = state => {
    return {
-
-       reviews : state.reviews
+       reviews : state.reviews.reviews
    } 
- 
 }
 
 const mapDispatchToProps = {
-    
-    fetchReviews
+     fetchReviews
+     
 }
 
 const Reviews = (props) => {
-    
-    //     const [reviews,setReviews] = useState([{}]);
-    
-    // const fetchRevs = async()=> {
-        //     const response= await fetch('http://localhost:5001/api/items');
-        //     const reviews = await response.json();
-        //     const sortedReviewsByDate=reviews.sort((a,b)=> a.date>b.date ? -1:1);
-        //     return (
-            //         setReviews(sortedReviewsByDate)
-            
-            //     )
-            
-            //  };
+ console.log(props)
     useEffect(()=>{
-     
         props.fetchReviews();
-        
     },[]);
   
-    
-    
     const ratings = props.reviews.map(review => { return( review.numStar)})
     const aveRating = ratings.reduce((a,b)=> (+a)+(+b))/(ratings.length);
     return (
-        <Container  >
+        <Container id='reviews' >
             <Row className="py-4 my-4">
-                <Col className="title py-4 my-4">
-                <h2>Reviews</h2>
+                <Col className="title py-4 my-4" >
+                <h2 >Reviews</h2>
                  <div className="underline"></div>
                 </Col>
             </Row>
-            <Row className="mx-auto px-auto">
-                <Col className="pb-sm-5"  sm="12" md="6" id="progressTooltip"  >
-                   
-                    {/* <Tooltip placement="top" isOpen={tooltipOpen} target="progressTooltip" toggle={toggle}>
-                        click to see review!
-                    </Tooltip> */}
-                    <Row className="justify-content-center">
+            <Row className="mx-auto px-auto ">
+                <Col  sm="12" md="6"  >
+                     <Row className="justify-content-center pb-3">
                          {[...Array(5)].map((_,i)=> {
                             const ratingValue = i+1;
                             return (
@@ -71,8 +50,7 @@ const Reviews = (props) => {
                                 )
                             })} 
                             <ReviewsModal reviews={props.reviews}  fetchReviews={props.fetchReviews}/>
-                            {/* <ReviewsModal reviews={reviews} setReviews={setReviews} fetchRevs={fetchRevs}/> */}
-                    </Row> 
+                     </Row> 
                    
                    {[...Array(5)].map((_,i) => {
                         const index = 5-i;

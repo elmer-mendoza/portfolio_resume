@@ -24,33 +24,26 @@ const Navigation = (props) => {
           <NavbarBrand  href="/"><h3>elmerMendoza</h3></NavbarBrand>
           <NavbarToggler onClick={toggle} />
               <Collapse isOpen={isOpen} navbar>
-                <Nav className=" ml-auto " navbar>
+                <Nav className=" ml-auto " navbar onClick={toggle}>
                   <NavItem >
-                    <NavLink href="/components/">Components</NavLink>
+                    <NavLink href="#projects">projects</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                    <NavLink href="#skills">skills</NavLink>
                   </NavItem>
-                  <UncontrolledDropdown nav inNavbar>
-                    <DropdownToggle nav caret>
-                      Options
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                      <DropdownItem>
-                        Option 1
-                      </DropdownItem>
-                      <DropdownItem divider />
-                      <DropdownItem>
-                        Option 2
-                      </DropdownItem>
-                      <DropdownItem divider />
-                      <DropdownItem>
-                        Reset
-                      </DropdownItem>
-                    </DropdownMenu>
-                  </UncontrolledDropdown>
+                  <NavItem >
+                    <NavLink href="#experience">experience</NavLink>
+                  </NavItem>
+                  <NavItem >
+                    <NavLink href="#education">education</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink href="https://github.com/elmer-mendoza">gitHub</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink href='#reviews'>reviews</NavLink>
+                  </NavItem>
                 </Nav>
-                <NavbarText>Simple Text</NavbarText>
               </Collapse>
         </Navbar>
     </div>
