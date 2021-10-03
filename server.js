@@ -11,7 +11,7 @@ const reviewRoutes = require('./routes/api/reviews')
 const app = express();
 
 if (process.env.NODE_ENV === 'production') {
-  // require('dotenv').config();
+  require('dotenv').config();
   app.use(express.static("client/build"));
 }
 app.use(cors());

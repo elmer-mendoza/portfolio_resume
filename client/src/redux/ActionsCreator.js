@@ -1,8 +1,8 @@
 import * as ActionTypes from './ActionTypes';
 
-// if (process.env.NODE_ENV !== 'production') {
-//   require('dotenv').config()
-// }
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 
 export  const fetchReviews=()=>async(dispatch) => {
         const REVIEWDATA_URL=process.env.REACT_APP_REVIEWDATA_URL;
