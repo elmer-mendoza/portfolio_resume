@@ -1,20 +1,26 @@
-import * as ActionTypes from './ActionTypes'
+import * as ActionTypes from './ActionTypes';
+
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 
 export  const fetchReviews=()=>async(dispatch) => {
-        const response= await fetch('http://localhost:5001/api/reviews');
+        const REVIEWDATA_URL=process.env.REACT_APP_REVIEWDATA_URL;
+        const response= await fetch(process.env.REACT_APP_REVIEWDATA_URL);
         const fetchedreviews = await response.json();
         const sortedReviewsByDate=fetchedreviews.sort((a,b)=> a.date>b.date ? -1:1);
         dispatch(addReviews(sortedReviewsByDate));
   }
  export const addReviews = (reviews)=>({
-         type: ActionTypes.FETCH_REVIEWDATA_REQUEST,
+        type: ActionTypes.FETCH_REVIEWDATA_REQUEST,
         payload:reviews
     })
 
 
 export const fetchData = () => dispatch => {
      dispatch(dataLoading());
-    return fetch('https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/resume-dmeca/service/Resume/incoming_webhook/resume')
+     const MAINDATA_URL=process.env.REACT_APP_MAINDATA_URL;
+    return fetch(process.env.REACT_APP_MAINDATA_URL)
     .then(response => {
          if (response.ok) {
             return response;
