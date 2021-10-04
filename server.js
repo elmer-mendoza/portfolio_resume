@@ -1,18 +1,15 @@
-
-
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors =require('cors')
-
 const reviewRoutes = require('./routes/api/reviews')
-
+require('dotenv').config()
 
 const app = express();
 
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
+// if (process.env.NODE_ENV !== 'production') {
+//   require('dotenv').config();
+// }
 app.use(express.static("client/build"));
 app.use(cors());
 
@@ -24,7 +21,6 @@ app.use(express.json());
 
 mongoose
     .connect('mongodb+srv://mdel_efm:Nov14151@mernshopping.jrbae.mongodb.net/resumeDB?retryWrites=true&w=majority',{ useNewUrlParser: true, useUnifiedTopology: true })
-    // .connect(process.env.DATABASE_URL,{ useNewUrlParser: true, useUnifiedTopology: true })
     .then(()=>console.log('MongoDB connected...'))
     .catch(err=>console.log(err));
 
