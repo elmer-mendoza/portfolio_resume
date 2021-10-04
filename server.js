@@ -32,9 +32,9 @@ app.use('/api/reviews',reviewRoutes)
 
 // code added
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(_dirname,"/client/build")));
+  app.use(express.static(path.join(__dirname,"/client/build")));
   app.get("*",(req,res)=> {
-    res.sendFile(path.join(_dirname,"client","build","index.html"));
+    res.sendFile(path.join(__dirname,"client","build","index.html"));
   })
 } else {
   app.get("/",(req,res)=> {
