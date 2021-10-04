@@ -8,7 +8,7 @@ const path = require('path')
 //   require('dotenv').config();
 // }
 
-require('dotenv').config();
+// require('dotenv').config();
 
 const app = express();
 
@@ -23,7 +23,7 @@ app.use(express.json());
 // Connect to Mongo
 
 mongoose
-.connect("mongodb+srv://mdel_efm:Nov14151@mernshopping.jrbae.mongodb.net/resumeDB?retryWrites=true&w=majority",{ useNewUrlParser: true, useUnifiedTopology: true })
+.connect(process.env.DATABASE_URL ||"mongodb+srv://mdel_efm:Nov14151@mernshopping.jrbae.mongodb.net/resumeDB?retryWrites=true&w=majority",{ useNewUrlParser: true, useUnifiedTopology: true })
 .then(()=>console.log('MongoDB connected...'))
 .catch(err=>console.log(err));
 
@@ -33,16 +33,19 @@ mongoose
 app.use('/api/reviews',reviewRoutes)
 
 // code added
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname,"/client/build")));
-  app.get("*",(req,res)=> {
-    res.sendFile(path.join(__dirname,"client","build","index.html"));
-  })
-} else {
-  app.get("/",(req,res)=> {
-    res.send("Api running")
-  })
+if(process.env.NODE_ENV === 'production'){
+  app.use(static('client/build'))
 }
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(__dirname,"/client/build")));
+//   app.get("*",(req,res)=> {
+//     res.sendFile(path.join(__dirname,"client","build","index.html"));
+//   })
+// } else {
+//   app.get("/",(req,res)=> {
+//     res.send("Api running")
+//   })
+// }
 
 const port = process.env.PORT || 5001;
 
