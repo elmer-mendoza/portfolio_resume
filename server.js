@@ -23,7 +23,8 @@ app.use(express.json());
 // Connect to Mongo
 
 mongoose
-    .connect(process.env.DATABASE_URL,{ useNewUrlParser: true, useUnifiedTopology: true })
+    .connect('mongodb+srv://mdel_efm:Nov14151@mernshopping.jrbae.mongodb.net/resumeDB?retryWrites=true&w=majority',{ useNewUrlParser: true, useUnifiedTopology: true })
+    // .connect(process.env.DATABASE_URL,{ useNewUrlParser: true, useUnifiedTopology: true })
     .then(()=>console.log('MongoDB connected...'))
     .catch(err=>console.log(err));
 

@@ -5,8 +5,9 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 export  const fetchReviews=()=>async(dispatch) => {
-        const REVIEWDATA_URL=process.env.REACT_APP_REVIEWDATA_URL;
-        const response= await fetch(process.env.REACT_APP_REVIEWDATA_URL);
+        const response= await fetch('https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/resume-dmeca/service/Resume/incoming_webhook/resume');
+        // const REVIEWDATA_URL=process.env.REACT_APP_REVIEWDATA_URL;
+        // const response= await fetch(process.env.REACT_APP_REVIEWDATA_URL);
         const fetchedreviews = await response.json();
         const sortedReviewsByDate=fetchedreviews.sort((a,b)=> a.date>b.date ? -1:1);
         dispatch(addReviews(sortedReviewsByDate));
@@ -19,8 +20,9 @@ export  const fetchReviews=()=>async(dispatch) => {
 
 export const fetchData = () => dispatch => {
      dispatch(dataLoading());
-     const MAINDATA_URL=process.env.REACT_APP_MAINDATA_URL;
-    return fetch(process.env.REACT_APP_MAINDATA_URL)
+    return fetch('http://localhost:5001/api/reviews')
+    //  const MAINDATA_URL=process.env.REACT_APP_MAINDATA_URL;
+    // return fetch(process.env.REACT_APP_MAINDATA_URL)
     .then(response => {
          if (response.ok) {
             return response;
