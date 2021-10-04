@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'; 
+import React,{useState} from 'react'; 
 import {Container,Row,Col, Button, Form, FormGroup, Input, FormText } from 'reactstrap';
 import {FaStar} from 'react-icons/fa'
 import axios from 'axios';
