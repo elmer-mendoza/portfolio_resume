@@ -4,9 +4,11 @@ const bodyParser = require('body-parser');
 const cors =require('cors')
 const reviewRoutes = require('./routes/api/reviews')
 const path = require('path')
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
+// if (process.env.NODE_ENV !== 'production') {
+//   require('dotenv').config();
+// }
+
+require('dotenv').config();
 
 const app = express();
 
