@@ -7,9 +7,8 @@
     "node": "14.x"
   },
   "scripts": {
-    "install-client": "cd client && npm install",
-    "heroku-postbuild": "npm run install-client && npm run build",
     "start": "node server.js",
+     "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client && run build --prefix client" ,
     "server": "nodemon server.js"
   },
   "author": "Elmer Mendoza",
