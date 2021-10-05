@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors =require('cors')
 const reviewRoutes = require('./routes/api/reviews')
-const path = require('path')
+// const path = require('path')
 // if (process.env.NODE_ENV !== 'production') {
 //   require('dotenv').config();
 // }
