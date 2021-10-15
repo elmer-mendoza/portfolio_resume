@@ -32,7 +32,7 @@ mongoose
 
 app.use('/api/reviews',reviewRoutes)
 
-code added
+// code added
 if(process.env.NODE_ENV === 'production'){
   app.use(static('client/build'))
 }
