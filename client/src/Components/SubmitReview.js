@@ -14,7 +14,7 @@ const Submit = () => {
     const formSubmit = (e) =>{
         e.preventDefault();
         const data = ({...formData});
-        axios.post(`http://localhost:5001/api/reviews`,data)
+        axios.post(`https://resume-elmermendoza.herokuapp.com/api/reviews`,data)
         .then(res=> {console.log(res)})
         .catch(err=>console.log(err));
         alert(`Thank you for your review ${formData.name}`)
