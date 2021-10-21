@@ -128,8 +128,8 @@ p {
   font-size: 2em; }
 
 .hero img {
-  height: 90vh;
-  max-width: 100vw;
+  height: 80vh;
+  max-width: 90vw;
   margin-top: 20vh;
   width: auto;
   justify-content: center;
@@ -389,4 +389,4 @@ input[type="radio"] {
   .submitReview {
     padding-top: 3rem !important; }
   #skills {
-    max-width: 80vw; } }
+    max-width: 90vw; } }

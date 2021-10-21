@@ -139,8 +139,8 @@ p {
 }
 
 .hero img {
-  height:90vh;
-  max-width: 100vw;
+  height:80vh;
+  max-width: 90vw;
   margin-top: 20vh;
   width:auto;
   justify-content: center;
@@ -208,7 +208,7 @@ p {
  }
 
  .skillsContainer {
-   box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   border: solid #00c4c4 1px;
  }
@@ -426,7 +426,7 @@ input[type="radio"] {
     padding-top: 3rem !important;
   }
   #skills {
-    max-width: 80vw;
+    max-width: 90vw;
   }
 }
 
