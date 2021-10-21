@@ -55,8 +55,7 @@ Global Styles
   box-sizing: border-box; }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
- Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background: var(--clr-grey-10);
   color: var(--clr-grey-1);
   line-height: 1.5;
@@ -130,7 +129,8 @@ p {
 
 .hero img {
   height: 90vh;
-  margin-top: 10vh;
+  max-width: 100vw;
+  margin-top: 20vh;
   width: auto;
   justify-content: center;
   position: relative; }
@@ -155,7 +155,7 @@ p {
   margin-left: 2rem;
   color: #383737; }
 
-.hero:hover svg {
+.hero:hover svg, .hero h3 {
   color: white; }
 
 .card {
@@ -182,6 +182,14 @@ p {
   padding: .3rem;
   color: white;
   font-size: 25px; }
+
+#skills {
+  max-width: 70vw; }
+
+.skillsContainer {
+  box-sizing: border-box;
+  width: 100%;
+  border: solid #00c4c4 1px; }
 
 .underline {
   width: 5rem;
@@ -335,13 +343,9 @@ Jobs
   border-color: transparent !important;
   text-align: center; }
 
-.certificate  {
-  direction: flex;
-  align-items: center;}
- 
 .certificate img {
   direction: flex;
-  align-items: center;
+  align-content: center;
   padding: 1.5rem;
   max-width: 300px;
   background-color: transparent !important; }
@@ -383,4 +387,6 @@ input[type="radio"] {
 
 @media screen and (max-width: 768px) {
   .submitReview {
-    padding-top: 3rem !important; } }
+    padding-top: 3rem !important; }
+  #skills {
+    max-width: 80vw; } }

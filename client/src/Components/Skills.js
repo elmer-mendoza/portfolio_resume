@@ -17,7 +17,7 @@ const Skills = ({loading}) => {
             <div  className="row justify-content-center">
                 {skills.map((skill,index) => {
                          return (
-                            <div key={index} style={{fontSize:"100px"}} className=" text-center col  m-2 ">
+                            <div key={index} style={{fontSize:"100px"}} className=" text-center col  m-2 skillsContainer">
                             {skill.icon}<p className="text-center" style={{fontSize:"20px"}} >{skill.name}</p>
                             </div>
                         )

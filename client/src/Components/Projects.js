@@ -19,9 +19,9 @@ const  Project=({project}) => {
                     <div className="row card-img">
                         <CardImg top  width="100%" height="150px"  src={img} alt="Card image cap" />
                         <p className="row link">
-                            <a href=""><i><MdLanguage /></i></a>
+                            <a href="https://gm-resort.netlify.app/"><i><MdLanguage /></i></a>
                             <a href="https://www.linkedin.com/in/elmer-mendoza/"><i><FaLinkedin /></i></a>
-                            <a href="https://github.com/elmer-mendoza"><i><FaGithub /></i></a>
+                            <a href="https://github.com/elmer-mendoza/gm-resort"><i><FaGithub /></i></a>
                         </p>
                     </div>  
                     <CardBody>

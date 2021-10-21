@@ -12,7 +12,7 @@ const Hero = () => {
                     <div className="col-7  ">
                          <img src={image}  alt="Self" /> 
                     </div>
-                    <div className="col-5 text-center ">
+                    <div className="col-5 text-center jobTitle ">
                           <h3 >Web Designer/Developer
                                 <a href="https://www.linkedin.com/in/elmer-mendoza/"><i><FaLinkedin /></i></a>
                                 <a href="https://github.com/elmer-mendoza"><i><FaGithub /></i></a>
