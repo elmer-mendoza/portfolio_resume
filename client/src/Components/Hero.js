@@ -6,17 +6,14 @@ import image from "./backgroundImage/self.png"
 const Hero = () => {
     
     return (
-        <div className="row fluid hero  mx-0 px-0">
+        <div className="hero">
             <div className="container ">
                 <div className="row  ">
-                    <div className="col-7  ">
+                    <div className=" ">
                          <img src={image}  alt="Self" /> 
                     </div>
-                    <div className="col-5 text-center jobTitle ">
-                          <h3 >Web Designer/Developer
-                                <a href="https://www.linkedin.com/in/elmer-mendoza/"><i><FaLinkedin /></i></a>
-                                <a href="https://github.com/elmer-mendoza"><i><FaGithub /></i></a>
-                          </h3>
+                    <div className="jobTitle ">
+                          <h1>Web Developer</h1>
                     </div>  
                 </div>
             </div>

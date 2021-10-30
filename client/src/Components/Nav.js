@@ -37,7 +37,13 @@ const Navigation = (props) => {
                     <NavLink href="https://github.com/elmer-mendoza">gitHub</NavLink>
                   </NavItem>
                   <NavItem>
+                    <NavLink href="https://www.linkedin.com/in/elmer-mendoza/">linkedin</NavLink>
+                  </NavItem>
+                  <NavItem>
                     <NavLink href='#reviews'>reviews</NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink href='#reviews'>login</NavLink>
                   </NavItem>
                 </Nav>
               </Collapse>

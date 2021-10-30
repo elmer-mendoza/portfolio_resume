@@ -118,6 +118,17 @@ p {
     line-height: 1;
   }
 }
+.navbar {
+    padding: .75rem 50px !important;
+}
+
+.navbar a {
+  transition: 250ms ease-in-out;
+}
+.navbar a:hover {
+  transform: scale(1.25);
+  color:rgb(253, 252, 252) !important;
+}
 .hero{
     background: linear-gradient(180deg,rgba(255, 0, 0, 0),rgba(255, 255, 255, 0),rgba(255, 255, 255, 0),white),url('./Components/backgroundImage/hero_background.jpg'); 
     background-size:cover;
@@ -125,17 +136,17 @@ p {
     background-repeat: no-repeat;
     width: 100vw;
     height:100vh;
+    position: relative;
  }
-@media screen and (min-width:758px) {
-    .navbar {
-        padding: .5rem 100px !important;
-    }
-}
-.hero h3 {
-    margin-top:75vh;
-    margin-left: -55vw;
-    background-color: rgba(255, 255, 255, 0.123) !important;
-    font-size: 2em;
+
+.hero .jobTitle {
+  color: white;
+  width: 50vw;
+  top:75vh;
+  right:30vw;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.123) !important;
+  position:absolute;  
 }
 
 .hero img {
@@ -145,12 +156,12 @@ p {
   width:auto;
   justify-content: center;
   // filter: drop-shadow(0 0 0.5rem rgb(182, 176, 176));
-  position:relative;
+  position: absolute;
 }
 .hero:hover img {
-
+  
   filter: drop-shadow(0 0 0.5rem rgb(182, 176, 176));
-
+  
 }
 .hero img::before {
   content:"image now";
@@ -174,44 +185,46 @@ p {
   color:rgb(255, 255, 255)
 }
 .card {
-    border:none !important;
-    width: 300px;
- }
- 
- .card-img {
-   position:relative;
-   overflow: hidden;
-   margin-left: 0px !important;
-  }
+  width: 300px;
+border: 1px solid var(--clr-primary-7) !important;
+}
 
-  .card .link {
-    padding:10px 50px;
-    position: absolute;
-    bottom:-50%;
-    color:rgb(243, 243, 243);
-    z-index: 1;
-    transition: 0.6s;
-    
-  }
-  .card:hover .link {
-    bottom:10px;
-  }
+.card-img {
+  position:relative;
+  overflow: hidden;
+  margin-left: 0px !important;
+}
+
+.card .link {
+  padding:10px 50px;
+  position: absolute;
+  bottom:-50%;
+  color:rgb(243, 243, 243);
+  z-index: 1;
+  transition: 0.6s;
+  
+}
+.card:hover .link {
+  bottom:10px;
+}
 
 .link a{
-    padding: .3rem;
-    color: rgb(255, 255, 255);
-    font-size: 25px;
- }
+  padding: .3rem;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+}
 
- #skills {
-   max-width: 70vw;
- }
+#skills {
+  max-width: 70vw;
+}
 
- .skillsContainer {
+.skillsContainer {
   box-sizing: border-box;
   width: 100%;
-  border: solid #00c4c4 1px;
- }
+  border:1px solid var(--clr-primary-7) ;
+  outline: 2px solid var(--clr-primary-7);
+  outline-offset: -5px;
+}
 
 .underline {
   width: 5rem;
@@ -374,11 +387,11 @@ Jobs
   text-align: center;
 }
 .certificate img {
- direction: flex;
- align-content: center;
- padding:1.5rem;
- max-width: 300px;
- background-color: transparent !important;
+  direction: flex;
+  align-content: center;
+  padding:1.5rem;
+  max-width: 300px;
+  background-color: transparent !important;
 }
 
 .star {
@@ -387,14 +400,14 @@ Jobs
   font-size: 1.65rem;
   margin-left: .75rem;
   transition: color 200ms;
-
+  
 }
 .starRating {
-    color: rgb(128, 128, 128);
+  color: rgb(128, 128, 128);
   font-size: 1.35rem;
   margin-left: .35rem;
   transition: color 200ms;
-
+  
 }
 
 
@@ -417,8 +430,8 @@ input[type="radio"] {
   margin-bottom:130px;
 }
 .reviewerName{
- text-transform: capitalize;
- font-size: 1rem; 
+  text-transform: capitalize;
+  font-size: 1rem; 
 }
 
 @media screen and (max-width: 768px) {
@@ -428,5 +441,11 @@ input[type="radio"] {
   #skills {
     max-width: 90vw;
   }
+  .jobTitle {
+    width: 80vw !important;
+    right:10vw !important;
+  }
 }
+
+
 
