@@ -7,7 +7,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-
 } from 'reactstrap';
 
 const Navigation = (props) => {
@@ -21,30 +20,30 @@ const Navigation = (props) => {
           <NavbarToggler onClick={toggle} />
               <Collapse isOpen={isOpen} navbar>
                 <Nav className=" ml-auto " navbar onClick={toggle}>
-                  <NavItem >
-                    <NavLink href="#projects">projects</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href="#skills">skills</NavLink>
-                  </NavItem>
-                  <NavItem >
-                    <NavLink href="#experience">experience</NavLink>
-                  </NavItem>
-                  <NavItem >
-                    <NavLink href="#education">education</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href="https://github.com/elmer-mendoza">gitHub</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href="https://www.linkedin.com/in/elmer-mendoza/">linkedin</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href='#reviews'>reviews</NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink href='#reviews'>login</NavLink>
-                  </NavItem>
+                    <NavItem >
+                      <NavLink href="#projects">projects</NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink href="#skills">skills</NavLink>
+                    </NavItem>
+                    <NavItem >
+                      <NavLink href="#experience">experience</NavLink>
+                    </NavItem>
+                    <NavItem >
+                      <NavLink href="#education">education</NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink href="https://github.com/elmer-mendoza">gitHub</NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink href="https://www.linkedin.com/in/elmer-mendoza/">linkedin</NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink href='#reviews'>reviews</NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink href='#'>login</NavLink>
+                    </NavItem>
                 </Nav>
               </Collapse>
         </Navbar>

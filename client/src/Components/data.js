@@ -66,7 +66,7 @@ export const skills = [
   },
   {
     id: 4,
-    name: 'Bootstrap/Reactstrap',
+    name: 'Bootstrap Reactstrap',
     icon: <SiBootstrap />,
   },
   {
@@ -81,7 +81,7 @@ export const skills = [
   },
   {
     id: 8,
-    name: 'MongoDB/Express',
+    name: 'MongoDB Express',
     icon: <SiMongodb />,
   },
   {

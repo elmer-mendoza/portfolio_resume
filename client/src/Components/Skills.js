@@ -7,9 +7,11 @@ const Skills = ({loading}) => {
     return <Loading/>
     } 
   return (
+      <div className="background">
+          
         <div id='skills' className="container">
-            <div className=" title row pt-5 text-center">
-                <div className="col pt-5">
+            <div className=" title row  text-center">
+                <div className="col ">
                     <h2>Skills</h2>
                     <div className="underline"></div>
                 </div>
@@ -24,6 +26,10 @@ const Skills = ({loading}) => {
                 })}
             </div>
         </div> 
+      </div>
+
+     
+
   );  
 };
 

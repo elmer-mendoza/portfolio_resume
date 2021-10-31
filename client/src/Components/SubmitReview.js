@@ -70,7 +70,8 @@ const Submit = () => {
                                         <label key={ratingValue}>
                                             <input 
                                                 type="radio" 
-                                                name="numStar" onChange={changeHandler}
+                                                name="numStar" 
+                                                onChange={changeHandler}
                                                 value={ratingValue}
                                                 onClick={()=> setRating(ratingValue)} 
                                                 required  />

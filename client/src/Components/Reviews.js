@@ -30,7 +30,7 @@ const Reviews = (props) => {
     return (
         <Container id='reviews' >
             <Row className="py-4 my-4">
-                <Col className="title py-4 my-4" >
+                <Col className="title py-2 my-2" >
                 <h2 >Reviews</h2>
                  <div className="underline"></div>
                 </Col>

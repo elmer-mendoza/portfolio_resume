@@ -17,12 +17,13 @@ const  Project=({project}) => {
             <div key={id}  className=" m-4 ">
                   <Card >
                     <div className="row card-img">
-                        <CardImg top  width="100%" height="150px"  src={img} alt="Card image cap" />
-                        <p className="row link">
-                            <a href="https://gm-resort.netlify.app/"><i><MdLanguage /></i></a>
-                            <a href="https://www.linkedin.com/in/elmer-mendoza/"><i><FaLinkedin /></i></a>
-                            <a href="https://github.com/elmer-mendoza/gm-resort"><i><FaGithub /></i></a>
-                        </p>
+                        <CardImg top  src={img} alt="Card image cap" />
+ {/* --hidden project link-- */}
+                            <p className="row link">
+                                <a href="https://gm-resort.netlify.app/"><i><MdLanguage /></i></a>
+                                <a href="https://www.linkedin.com/in/elmer-mendoza/"><i><FaLinkedin /></i></a>
+                                <a href="https://github.com/elmer-mendoza/gm-resort"><i><FaGithub /></i></a>
+                            </p>
                     </div>  
                     <CardBody>
                         <CardTitle tag="h5">{title}</CardTitle>
@@ -30,7 +31,7 @@ const  Project=({project}) => {
                           <CardText>
                             <p >
                                {readMore ? desc : `${desc.substring(0, 50)}`}
-                                <button className="text-warning " onClick={() => setReadMore(!readMore)}>
+                                <button className="text-primary" onClick={() => setReadMore(!readMore)}>
                                     {readMore ? '...show less' : '...read more'}
                                 </button>
                             </p>

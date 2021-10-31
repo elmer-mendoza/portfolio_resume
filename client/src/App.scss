@@ -118,23 +118,37 @@ p {
     line-height: 1;
   }
 }
+
+/*
+=============== 
+Navbar
+===============
+*/
 .navbar {
     padding: .75rem 50px !important;
 }
 
 .navbar a {
-  transition: 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
 }
 .navbar a:hover {
-  transform: scale(1.25);
+  transform: scale(1.25) translateY(-0.25vw);
   color:rgb(253, 252, 252) !important;
 }
+
+/*
+=============== 
+Hero
+===============
+*/
+
 .hero{
+    display:block !important;
     background: linear-gradient(180deg,rgba(255, 0, 0, 0),rgba(255, 255, 255, 0),rgba(255, 255, 255, 0),white),url('./Components/backgroundImage/hero_background.jpg'); 
     background-size:cover;
     background-position-x: center;
     background-repeat: no-repeat;
-    width: 100vw;
+    width: 100vw !important;
     height:100vh;
     position: relative;
  }
@@ -151,11 +165,10 @@ p {
 
 .hero img {
   height:80vh;
-  max-width: 90vw;
+  max-width: auto;
   margin-top: 20vh;
   width:auto;
   justify-content: center;
-  // filter: drop-shadow(0 0 0.5rem rgb(182, 176, 176));
   position: absolute;
 }
 .hero:hover img {
@@ -184,8 +197,15 @@ p {
 .hero:hover svg ,.hero h3 {
   color:rgb(255, 255, 255)
 }
+
+/*
+=============== 
+Projects
+===============
+*/
+
 .card {
-  width: 300px;
+width: 300px;
 border: 1px solid var(--clr-primary-7) !important;
 }
 
@@ -193,38 +213,65 @@ border: 1px solid var(--clr-primary-7) !important;
   position:relative;
   overflow: hidden;
   margin-left: 0px !important;
+  width:100%;
+  height: 150px;
 }
 
 .card .link {
   padding:10px 50px;
   position: absolute;
   bottom:-50%;
-  color:rgb(243, 243, 243);
   z-index: 1;
   transition: 0.6s;
   
 }
 .card:hover .link {
-  bottom:10px;
+  bottom:-10% !important;
+  transform: scale(1.35)
 }
 
 .link a{
   padding: .3rem;
   color: rgb(255, 255, 255);
   font-size: 25px;
+  transition: all 200ms ease-in-out;
+
+}
+.link:hover a{
+  transform: scale(1.2);
 }
 
+/*
+=============== 
+Skills
+===============
+*/
+
+.background {
+  display:block !important;
+  width: 100%;
+  background-color: rgba(110, 109, 109, 0.03);
+  padding:7vw 0 7vw 0;
+  margin-top:4vw;
+}
 #skills {
   max-width: 70vw;
+  
 }
 
 .skillsContainer {
   box-sizing: border-box;
-  width: 100%;
+  max-width: 200px !important;
   border:1px solid var(--clr-primary-7) ;
   outline: 2px solid var(--clr-primary-7);
   outline-offset: -5px;
 }
+
+/*
+=============== 
+Title
+===============
+*/
 
 .underline {
   width: 5rem;
@@ -240,14 +287,12 @@ border: 1px solid var(--clr-primary-7) !important;
   text-align: center;
 }
 
-.modal-dialog {
-  max-width: 70vw !important;
-  margin: auto !important;
-}
-.modal-content {
-  background-color: transparent !important;
-  border: transparent !important; 
-}
+
+/*
+=============== 
+Loading
+===============
+*/
 
 .loading {
   text-transform: capitalize;
@@ -379,6 +424,12 @@ Jobs
 .button-glow {
   animation: glowing 2000ms infinite;
 }
+
+/*
+=============== 
+Education
+===============
+*/
 #education article, button {
   text-decoration: none;
   color: var(--clr-grey-1);
@@ -386,6 +437,12 @@ Jobs
   border-color: transparent !important;
   text-align: center;
 }
+
+/*
+=============== 
+Certificate
+===============
+*/
 .certificate img {
   direction: flex;
   align-content: center;
@@ -394,22 +451,39 @@ Jobs
   background-color: transparent !important;
 }
 
+/*
+=============== 
+Reviews
+===============
+*/
+
+.modal-dialog {
+  max-width: 70vw !important;
+  margin: auto !important;
+}
+.modal-content {
+  background-color: transparent !important;
+  border: transparent !important; 
+}
+
+
 .star {
   cursor: pointer;
   color: rgb(128, 128, 128);
   font-size: 1.65rem;
   margin-left: .75rem;
-  transition: color 200ms;
-  
+  transition: all 200ms;
+}
+.star:hover{
+  transform: scale(1.2) rotate(360deg) translateY(-5px);
+  // transform: ;
 }
 .starRating {
   color: rgb(128, 128, 128);
   font-size: 1.35rem;
   margin-left: .35rem;
   transition: color 200ms;
-  
 }
-
 
 input[type="radio"] {
   display:none;
@@ -433,6 +507,17 @@ input[type="radio"] {
   text-transform: capitalize;
   font-size: 1rem; 
 }
+.submitReview{
+    border: 1px solid var(--clr-grey-2);
+  padding: 10px;
+  box-shadow: 0 0 20px #00c4c4;
+}
+
+/*
+=============== 
+Break point
+===============
+*/
 
 @media screen and (max-width: 768px) {
   .submitReview {
@@ -445,6 +530,19 @@ input[type="radio"] {
     width: 80vw !important;
     right:10vw !important;
   }
+  .navbar a:hover {
+   transform: translateX(10px);
+ }
+ .navbar{
+   padding:1rem !important;
+  //  display: flex !important;
+  //  justify-content:flex-start !important;
+   
+ }
+ .submitReview{
+   margin-top: 5rem !important;
+ }
+
 }
 
 

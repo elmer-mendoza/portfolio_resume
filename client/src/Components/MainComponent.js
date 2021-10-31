@@ -30,8 +30,8 @@ function App(props) {
 
   return (
     <>
-        <Nav/>
         <Hero />
+        <Nav/>
         <Projects projects={data.projects} loading={loading}/>
         <Skills loading={loading}/>
         <Experiences jobs={data.jobs} loading={loading}/>
