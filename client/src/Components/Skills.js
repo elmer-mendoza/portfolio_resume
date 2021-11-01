@@ -7,8 +7,7 @@ const Skills = ({loading}) => {
     return <Loading/>
     } 
   return (
-      <div className="background">
-          
+      <div className="altBackground">          
         <div id='skills' className="container">
             <div className=" title row  text-center">
                 <div className="col ">

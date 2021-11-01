@@ -118,6 +118,18 @@ p {
     line-height: 1;
   }
 }
+/*
+=============== 
+Alternate background
+===============
+*/
+.altBackground {
+  display:block !important;
+  width: 100%;
+  background-color: rgba(110, 109, 109, 0.1);
+  padding:7vw 0 7vw 0;
+  margin-top:4vw;
+}
 
 /*
 =============== 
@@ -126,7 +138,11 @@ Navbar
 */
 .navbar {
     padding: .75rem 50px !important;
+    width:100%;
 }
+
+.navbar .nav-link {
+  padding:auto !important;}
 
 .navbar a {
   transition: all 250ms ease-in-out;
@@ -164,6 +180,7 @@ Hero
 }
 
 .hero img {
+  direction:block;
   height:80vh;
   max-width: auto;
   margin-top: 20vh;
@@ -247,13 +264,6 @@ Skills
 ===============
 */
 
-.background {
-  display:block !important;
-  width: 100%;
-  background-color: rgba(110, 109, 109, 0.03);
-  padding:7vw 0 7vw 0;
-  margin-top:4vw;
-}
 #skills {
   max-width: 70vw;
   
@@ -519,7 +529,7 @@ Break point
 ===============
 */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 830px) {
   .submitReview {
     padding-top: 3rem !important;
   }
@@ -534,16 +544,24 @@ Break point
    transform: translateX(10px);
  }
  .navbar{
-   padding:1rem !important;
-  //  display: flex !important;
-  //  justify-content:flex-start !important;
-   
- }
+   padding:1rem 1.75rem !important;
+
+}
  .submitReview{
    margin-top: 5rem !important;
  }
 
+ .nav-link{
+  font-size: 0.85rem !important;
+ }
+ .hero img{
+   height:60vh;
+   margin-top:40vh;
+ }
+ 
 }
+
+
 
 
 

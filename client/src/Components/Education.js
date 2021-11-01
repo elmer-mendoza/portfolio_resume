@@ -16,8 +16,7 @@ function Education({education,loading}) {
     return <Loading/>
     } 
     return (
-      <div className="background">
-
+      <div className="altBackground">
           <Container id='education'>
               <Row>
                 <Col  >
