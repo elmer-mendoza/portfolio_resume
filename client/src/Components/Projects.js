@@ -5,14 +5,13 @@ import {
 Card, CardImg, CardText, CardBody,
 CardTitle, CardSubtitle
 } from 'reactstrap';
-
 import { FaLinkedin } from 'react-icons/fa';
 import Loading from "./Loading";
 
 
 const  Project=({project}) => {
     const [readMore, setReadMore] = useState(false);
-    const {id,title,category,img,desc} = project;
+    const {id,title,category,img,desc,githubLink,website} = project;
          return (
             <div key={id}  className=" m-4 ">
                   <Card >
@@ -20,13 +19,13 @@ const  Project=({project}) => {
                         <CardImg top  src={img} alt="Card image cap" />
  {/* --hidden project link-- */}
                             <p className="row link">
-                                <a href="https://gm-resort.netlify.app/"><i><MdLanguage /></i></a>
+                                <a href={website}><i><MdLanguage /></i></a>
+                                <a href={githubLink}><i><FaGithub /></i></a>
                                 <a href="https://www.linkedin.com/in/elmer-mendoza/"><i><FaLinkedin /></i></a>
-                                <a href="https://github.com/elmer-mendoza/gm-resort"><i><FaGithub /></i></a>
                             </p>
                     </div>  
                     <CardBody>
-                        <CardTitle tag="h5">{title}</CardTitle>
+                        <CardTitle tag="h5"><a href={website}>{title}</a></CardTitle>
                         <CardSubtitle tag="h6" className="mb-2 text-muted">{category}</CardSubtitle>
                           <CardText>
                             <p >

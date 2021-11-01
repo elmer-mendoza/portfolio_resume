@@ -111,7 +111,7 @@ export const skills = [
   },
   {
     id: 12,
-    name: 'Saas',
+    name: 'Sass',
     icon: <DiSass/>,
   },
   {
@@ -126,7 +126,7 @@ export const skills = [
   },
   {
     id: 14,
-    name: 'Pythons',
+    name: 'Python',
     icon: <SiPython/>,
   },
 ];
