@@ -416,10 +416,11 @@ Certificate
   align-content: center;
   padding: 1.5rem;
   width: 250px;
-  background-color: transparent !important; }
+  background-color: transparent !important;
+  transition: all 0.3s ease-in-out; }
 
 .certificate img:hover {
-  width: 350px;
+  transform: scale(1.4);
   margin-left: -65px !important; }
 
 /*
