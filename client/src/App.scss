@@ -454,11 +454,15 @@ Certificate
 ===============
 */
 .certificate img {
-  direction: flex;
+  direction: block;
   align-content: center;
   padding:1.5rem;
-  max-width: 300px;
+  width: 250px;
   background-color: transparent !important;
+}
+.certificate img:hover {
+  width:350px;
+  margin-left: -65px !important;
 }
 
 /*
