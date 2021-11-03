@@ -153,7 +153,8 @@ Hero
   background-repeat: no-repeat;
   width: 100vw !important;
   height: 100vh;
-  position: relative; }
+  position: relative;
+  margin-top: -10vh; }
 
 .hero .jobTitle {
   color: white;
@@ -312,6 +313,9 @@ Jobs
 .active-btn {
   color: var(--clr-primary-5);
   box-shadow: 0 2px var(--clr-primary-5); }
+
+.job-info {
+  margin-bottom: 50px; }
 
 .job-info h3 {
   font-weight: 400; }

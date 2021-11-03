@@ -38,8 +38,8 @@ const Submit = () => {
      try {
        Resizer.imageFileResizer(
          e.target.files[0],
-         300,
-         300,
+         100,
+         100,
          "JPEG",
          100,
          0,
@@ -92,7 +92,7 @@ const Submit = () => {
                          <FormGroup>
                             <Input type="file" name="reviewerImage"  id="reviewerImage"  onChange={fileChangedHandler} /> 
                               <FormText color="muted">
-                                <img src={newImage} alt="" /> 
+                                {/* <img src={newImage} alt="" />  */}
                                 Upload your profile picture
                             </FormText>
                                 <Button className="my-1" >Submit</Button>
