@@ -15,10 +15,10 @@ export  const fetchReviews=()=>async(dispatch) => {
     })
 
 
-export const fetchData = () => dispatch => {
+export const fetchData = () => async(dispatch) => {
      dispatch(dataLoading());
     //   const MAINDATA_URL=process.env.REACT_APP_MAINDATA_URL;
-    return fetch("https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/resume-dmeca/service/Resume/incoming_webhook/resume")
+    return await fetch("https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/resume-dmeca/service/Resume/incoming_webhook/resume")
     .then(response => {
          if (response.ok) {
             return response;
