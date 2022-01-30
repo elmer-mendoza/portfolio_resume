@@ -12,8 +12,6 @@ require('dotenv').config();
 
 const app = express();
 
-
-
 app.use(cors());
 
 // Bodyparser Middleware

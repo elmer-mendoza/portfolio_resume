@@ -15,7 +15,7 @@ const ReviewSchema = new Schema({
      },
    
     reviewerImage:{
-        type:String
+        type: String,
     },
      
      date: {

@@ -2,18 +2,25 @@ import React,{useState} from 'react';
 import {Container,Row,Col, Button, Form, FormGroup, Input, FormText } from 'reactstrap';
 import {FaStar} from 'react-icons/fa'
 import axios from 'axios';
-import Resizer from "react-image-file-resizer";
 
 
 const Submit = () => {
     const [rating,setRating] =useState(null)
     const [hover,setHover] =useState(null)
-    const [formData, setFormData] = useState({})
+    const [formData, setFormData] = useState()
     const [newImage, setNewImage] = useState();
     
     const formSubmit = (e) =>{
         e.preventDefault();
-        const data = ({...formData});
+        const avatar =new FormData();
+        avatar.append('reviewerImage', newImage);
+        avatar.append('name',formData.name);
+        avatar.append('comment', formData.comment);
+        avatar.append('numStar', formData.numStar);
+        const data = avatar;
+        console.log(data);
+        
+        // axios.post(`http://localhost:5001/api/reviews`,data)
         axios.post(`https://resume-elmermendoza.herokuapp.com/api/reviews`,data)
         .then(res=> {console.log(res)})
         .catch(err=>console.log(err));
@@ -30,33 +37,11 @@ const Submit = () => {
     }
     
     const fileChangedHandler=(e)=> {
-    let fileInput = false;
-    if (e.target.files[0]) {
-     fileInput = true;
+    console.log(e.target.files[0])
+         setNewImage(e.target.files[0]);  
+    
     }
-    if (fileInput) {
-     try {
-       Resizer.imageFileResizer(
-         e.target.files[0],
-         100,
-         100,
-         "JPEG",
-         100,
-         0,
-         (uri) => {
-           console.log(uri);
-        //    setNewImage({ newImage: uri });
-         setFormData({...formData,reviewerImage:uri})  
-         },
-         "base64",
-         200,
-         200
-       );
-     } catch (err) {
-       console.log(err);
-     }
-    }
-    }
+
  
     return (
         <Container className="submitReview">
