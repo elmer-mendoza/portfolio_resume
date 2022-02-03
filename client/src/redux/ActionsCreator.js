@@ -3,8 +3,8 @@ import * as ActionTypes from './ActionTypes';
 export  const fetchReviews=()=>async(dispatch) => {
         // const REVIEWDATA_URL=process.env.REACT_APP_REVIEWDATA_URL;
         // const response= await fetch(process.env.REACT_APP_REVIEWDATA_URL);
-        //  const response= await fetch("https://resume-elmermendoza.herokuapp.com/api/reviews");
-         const response= await fetch("http://localhost:5001/api/reviews");
+         const response= await fetch("https://resume-elmermendoza.herokuapp.com/api/reviews");
+        //  const response= await fetch("http://localhost:5001/api/reviews");
          const fetchedreviews = await response.json();
         const sortedReviewsByDate=fetchedreviews.sort((a,b)=> a.date>b.date ? -1:1);
         dispatch(addReviews(sortedReviewsByDate));
