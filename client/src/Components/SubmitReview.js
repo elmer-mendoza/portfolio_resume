@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import {Container,Row,Col, Button, Form, FormGroup, Input, FormText } from 'reactstrap';
 import {FaStar} from 'react-icons/fa'
 import axios from 'axios';
+import Resizer from "react-image-file-resizer";
 
 
 const Submit = () => {
@@ -35,12 +36,40 @@ const Submit = () => {
         })
         console.log(formData)
     }
-    
+
     const fileChangedHandler=(e)=> {
-    console.log(e.target.files[0])
-         setNewImage(e.target.files[0]);  
-    
+    let fileInput = false;
+    if (e.target.files[0]) {
+     fileInput = true;
     }
+    if (fileInput) {
+     try {
+       Resizer.imageFileResizer(
+         e.target.files[0],
+         100,
+         100,
+         "JPEG",
+         50,
+         0,
+         (uri) => {
+           console.log(uri);
+           setNewImage( uri );
+        //  setFormData({...formData,reviewerImage:uri})  
+         },
+         "file",
+         100,
+         100
+       );
+     } catch (err) {
+       console.log(err);
+     }
+    }
+    }
+    
+    // const fileChangedHandler=(e)=> {
+    // console.log(e.target.files[0])
+    //      setNewImage(e.target.files[0]);  
+    // }
 
  
     return (
