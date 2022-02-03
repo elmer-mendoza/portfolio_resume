@@ -12,7 +12,7 @@ const FilteredReviews = (props) => {
             <Row className="justify-content-center ">
                   {props.filteredReviews.map((review) => {
                     const {reviewerImage,name,date,comment,id,numStar} = review;
-                    const avatar =require(`./images/${reviewerImage}`).default
+                    // const avatar =require(`./images/${reviewerImage}`).default
                     console.log(review)
                     return (
                           <Col className="fback_card border border-primary  p-3 m-2 shadow" key={id}>
@@ -31,7 +31,7 @@ const FilteredReviews = (props) => {
                              <hr/>
                             <Row >
                                 <Col className="col-4">
-                                    <img src={avatar} className="fback_img shadow m-1"  alt="" /> 
+                                    <img src={reviewerImage} className="fback_img shadow m-1"  alt="" /> 
                                 </Col>
                                 <Col className="col-8 ">
                                     <Row className="reviewerName">
