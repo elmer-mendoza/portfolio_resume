@@ -25,7 +25,7 @@ function Education({education,loading}) {
                   <div className="underline"></div>
                   </div>
                   
-                  <div >
+                  <div>
                       {education.map((educ,index) =>{
                           const {school,accomplishment,year} = educ;
                           return (
