@@ -7,11 +7,17 @@ const path = require('path')
 // if (process.env.NODE_ENV !== 'production') {
 //   require('dotenv').config();
 // }
-// var http = require("http");
-// setInterval(function() {
-//     http.get("http://resume-elmermendoza.herokuapp.com");
-// console.log("heroku ping")
-// }, 300000)
+var http = require("http");
+
+setInterval(function() {
+    const timeNow = new Date().getHours();
+ if (timeNow>4 && timeNow<22) {
+   http.get("http://resume-elmermendoza.herokuapp.com");
+   console.log("time")
+ }
+    console.log("heroku ping")
+    console.log(timeNow)
+}, 30000)
 
 require('dotenv').config();
 
