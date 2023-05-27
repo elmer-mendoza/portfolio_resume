@@ -2,7 +2,7 @@ const express = require('express');
 const multer =require('multer');
 const multerS3 = require("multer-s3");
 const dotenv =require ('dotenv')
-const aws =require('aws-sdk') 
+const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3')
 const router = express.Router();
 
 dotenv.config()
@@ -37,26 +37,29 @@ const region = "us-east-2"
 const accessKeyId = process.env.AWS_ACCESS_KEY_ID
 const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY
 
-const s3 = new aws.S3({
+const s3Client = new S3Client({
   region,
-  accessKeyId,
-  secretAccessKey
-})
+  credentials: {
+    accessKeyId,
+    secretAccessKey,
+  },
+});
 
-const upload = (bucketName) =>
 
-  multer({
-    storage: multerS3({
-      s3,
-      bucket: bucketName,
-      metadata: function (req, file, cb) {
-        cb(null, { fieldName: file.fieldname });
-      },
-      key: function (req, file, cb) {
-        cb(null, Date.now()+'--'+file.originalname);
-      },
-    }),
+  const upload = (bucketName) =>
+    multer({
+      storage: multerS3({
+        s3: s3Client,
+        bucket: bucketName,
+        metadata: function (req, file, cb) {
+          cb(null, { fieldName: file.fieldname });
+        },
+        key: function (req, file, cb) {
+          cb(null, Date.now()+'--'+file.originalname);
+        },
+      }),
   });
+
 
 router.post('/',upload("resumerevieweravatar").single('reviewerImage'),async(req,res) =>{
     
