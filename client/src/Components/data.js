@@ -7,14 +7,14 @@ import {
   SiCss3,
   SiBootstrap,
   SiReact,
-  SiNodeDotJs,
+  SiNodedotjs,
   SiMongodb,
   SiAdobephotoshop,
   SiFigma,
   SiJquery,
   SiRedux,
   SiGraphql,
-  SiMaterialUi,
+  SiMaterialui,
   SiWordpress,
   SiPython
 
@@ -61,12 +61,12 @@ export const skills = [
   },
   {
     id: 5,
-    name: 'React/React Native',
+    name: 'React',
     icon: <SiReact />,
   },
   {
     id: 4,
-    name: 'Bootstrap Reactstrap',
+    name: 'Bootstrap',
     icon: <SiBootstrap />,
   },
   {
@@ -77,11 +77,11 @@ export const skills = [
   {
     id: 7,
     name: 'NodeJs',
-    icon: <SiNodeDotJs />,
+    icon: <SiNodedotjs />,
   },
   {
     id: 8,
-    name: 'MongoDB Express',
+    name: 'MongoDB',
     icon: <SiMongodb />,
   },
   {
@@ -117,7 +117,7 @@ export const skills = [
   {
     id: 12,
     name: 'Material-Ui',
-    icon: <SiMaterialUi/>,
+    icon: <SiMaterialui/>,
   },
   {
     id: 13,

@@ -44,6 +44,7 @@ const s3 = new aws.S3({
 })
 
 const upload = (bucketName) =>
+
   multer({
     storage: multerS3({
       s3,
@@ -58,16 +59,13 @@ const upload = (bucketName) =>
   });
 
 router.post('/',upload("resumerevieweravatar").single('reviewerImage'),async(req,res) =>{
-  
-    console.log(req.body);
-    console.log(req.file.location);
     
    const newReview =new Review();
    newReview.name=req.body.name;
    newReview.comment=req.body.comment;
    newReview.numStar=req.body.numStar;
    newReview.reviewerImage=req.file.location;
-   
+   console.log("new",newReview)
    try {
         await  newReview.save().then(review=>res.json(review));   
    

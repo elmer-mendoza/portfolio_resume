@@ -9,15 +9,15 @@ const path = require('path')
 // }
 var http = require("http");
 
-setInterval(function() {
-    const timeNow = new Date().getHours();
- if (timeNow>4 && timeNow<22) {
-   http.get("http://resume-elmermendoza.herokuapp.com");
-   console.log("time")
- }
-    console.log("heroku ping")
-    console.log(timeNow)
-}, 30000)
+// setInterval(function() {
+//     const timeNow = new Date().getHours();
+//  if (timeNow>4 && timeNow<22) {
+//    http.get("http://resume-elmermendoza.herokuapp.com");
+//    console.log("time")
+//  }
+//     console.log("heroku ping")
+//     console.log(timeNow)
+// }, 30000)
 
 require('dotenv').config();
 

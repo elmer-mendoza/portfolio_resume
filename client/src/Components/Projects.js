@@ -53,7 +53,7 @@ const Projects = ({projects,loading}) => {
                     <div className="underline"></div>
                 </div>
             </div>
-            <div  className="row justify-content-center">
+            <div  className="d-flex flex-wrap justify-content-center ">
                 {projects.map((project,index) => {
                     return(
                         <Project key={index} project={project}/>

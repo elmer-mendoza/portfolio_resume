@@ -37,11 +37,11 @@ const ReviewsModal = (props) => {
   const sortDate =(e)=> {
     
     if (e.target.value === "Earliest") {
-      const sortedDate=filteredReviews.sort((a,b)=> a.date<b.date ? -1:1);
+      const sortedDate=[...filteredReviews].sort((a,b)=> a.date<b.date ? -1:1);
       return setFilteredReviews([...sortedDate]);
     }
     if (e.target.value === "Latest") {
-      const sortedDate=filteredReviews.sort((a,b)=>a.date>b.date ? -1:1);
+      const sortedDate=[...filteredReviews].sort((a,b)=>a.date>b.date ? -1:1);
       return setFilteredReviews([...sortedDate]);
     }  
   }

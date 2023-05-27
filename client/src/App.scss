@@ -139,6 +139,8 @@ Navbar
 .navbar {
     padding: .75rem 50px !important;
     width:100%;
+    display: flex;
+    
 }
 
 .navbar .nav-link {
@@ -223,6 +225,7 @@ Projects
 */
 
 .card {
+
 width: 300px;
 border: 1px solid var(--clr-primary-7) !important;
 }
@@ -501,6 +504,7 @@ Reviews
   font-size: 1.35rem;
   margin-left: .35rem;
   transition: color 200ms;
+
 }
 
 input[type="radio"] {

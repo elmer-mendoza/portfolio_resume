@@ -37,18 +37,19 @@ const Reviews = (props) => {
             </Row>
             <Row className="mx-auto px-auto ">
                 <Col  sm="12" md="6"  >
-                     <Row className="justify-content-center pb-3">
+                     <div className="justify-content-center pb-3 starReview">
                          {[...Array(5)].map((_,i)=> {
                             const ratingValue = i+1;
                             return (
-                                <label key={ratingValue}>
-                                    <FaStar className="starRating"
+                                <label key={ratingValue} className="starRating ">
+                                    <FaStar 
                                         color={ratingValue <= aveRating ? "#ffc107" : "rgb(128,128,128)"}/>
                                 </label>
                                 )
                             })} 
                             <ReviewsModal reviews={props.reviews}  fetchReviews={props.fetchReviews}/>
-                     </Row> 
+                     </div> 
+                  
                    
                    {[...Array(5)].map((_,i) => {
                         const index = 5-i;

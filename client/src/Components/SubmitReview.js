@@ -20,14 +20,17 @@ const Submit = () => {
         avatar.append('numStar', formData.numStar);
         const data = avatar;
         console.log(data);
+
+ 
         
-        // axios.post(`http://localhost:5001/api/reviews`,data)
-        axios.post(`https://resume-elmermendoza.herokuapp.com/api/reviews`,data)
+        axios.post(`http://localhost:5001/api/reviews`,data)
+        // axios.post(`https://resume-elmermendoza.herokuapp.com/api/reviews`,data)
         .then(res=> {console.log(res)})
         .catch(err=>console.log(err));
         alert(`Thank you for your review ${formData.name}`)
         e.target.reset()  
         setRating(null);
+        setNewImage(null)
         }
         
     const changeHandler =(e) => {
@@ -38,32 +41,20 @@ const Submit = () => {
     }
 
     const fileChangedHandler=(e)=> {
-    let fileInput = false;
-    if (e.target.files[0]) {
-     fileInput = true;
-    }
-    if (fileInput) {
-     try {
-       Resizer.imageFileResizer(
-         e.target.files[0],
-         100,
-         100,
-         "JPEG",
-         50,
-         0,
-         (uri) => {
-           console.log(uri);
-           setNewImage( uri );
-        //  setFormData({...formData,reviewerImage:uri})  
-         },
-         "file",
-         100,
-         100
-       );
-     } catch (err) {
-       console.log(err);
-     }
-    }
+        let fileInput = false;
+        if (e.target.files[0]) { 
+            fileInput = true;}
+        if (fileInput) {
+            try {
+            Resizer.imageFileResizer(
+                e.target.files[0], 100, 100, "JPEG", 50,0,
+                (uri) => {console.log(uri); setNewImage( uri );},
+                "file", 100, 100
+            );
+            } catch (err) {
+            console.log(err);
+            }
+        }
     }
     
     // const fileChangedHandler=(e)=> {
@@ -73,29 +64,29 @@ const Submit = () => {
 
  
     return (
-        <Container className="submitReview">
+        <div className='review__submit' sm="12" md="6" lg="6">
             <Row >
                 <Col className="col-9 mx-auto">
-                     <Form  id="myForm" onSubmit={formSubmit} method='post' encType='multipart/form-data'>
+                    <Form  id="myForm" onSubmit={formSubmit} method='post' encType='multipart/form-data'>
                         <FormGroup >
-                                {[...Array(5)].map((_,i)=> {
-                                    const ratingValue = i + 1;
-                                     return (
-                                        <label key={ratingValue}>
-                                            <input 
-                                                type="radio" 
-                                                name="numStar" 
-                                                onChange={changeHandler}
-                                                value={ratingValue}
-                                                onClick={()=> setRating(ratingValue)} 
-                                                required  />
-                                            <FaStar className="star" 
-                                                color={ratingValue <= (hover || rating) ? "#ffc107" : "rgb(128,128,128)"}
-                                                onMouseEnter={()=>setHover(ratingValue)}
-                                                onMouseLeave={()=>setHover(null)} />
-                                        </label>
-                                    )
-                                })}
+                            {[...Array(5)].map((_,i)=> {
+                                const ratingValue = i + 1;
+                                    return (
+                                    <label key={ratingValue}>
+                                        <input 
+                                            type="radio" 
+                                            name="numStar" 
+                                            onChange={changeHandler}
+                                            value={ratingValue}
+                                            onClick={()=> setRating(ratingValue)} 
+                                            required  />
+                                        <FaStar className="star" 
+                                            color={ratingValue <= (hover || rating) ? "#ffc107" : "rgb(128,128,128)"}
+                                            onMouseEnter={()=>setHover(ratingValue)}
+                                            onMouseLeave={()=>setHover(null)} />
+                                    </label>
+                                )
+                            })}
                         </FormGroup>
                         <FormGroup>
                             <Input type="textarea" name="comment"  onChange={changeHandler} id="textArea" placeholder="Write your comment" required/>
@@ -103,18 +94,19 @@ const Submit = () => {
                         <FormGroup>
                             <Input type="text" name="name" id="name"  onChange={changeHandler} placeholder="Name" required/>
                         </FormGroup>
-                         <FormGroup>
+                        <FormGroup>
                             <Input type="file" name="reviewerImage"  id="reviewerImage"  onChange={fileChangedHandler} /> 
-                              <FormText color="muted">
-                                {/* <img src={newImage} alt="" />  */}
-                                Upload your profile picture
+                            <FormText color="muted">
+                            {newImage ? <img src={URL.createObjectURL(newImage)} className="fback_img shadow m-1" alt="" /> :
+                            "Upload your profile picture"}
                             </FormText>
-                                <Button className="my-1" >Submit</Button>
+                                {/* <Button className="my-1 mx-2" >Submit</Button> */}
                         </FormGroup>
+                        <Button className="my-1" >Submit</Button>
                     </Form>
                 </Col>
             </Row>
-        </Container>
+        </div>
     ) 
 }
 
